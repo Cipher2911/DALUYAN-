@@ -256,167 +256,64 @@ document.addEventListener('DOMContentLoaded', () => {
       categoryLabel: 'GUECO • Platform 01',
       badgeColor: 'bg-[#149E92]/25 text-[#7AC0BA] border border-[#7AC0BA]/30',
       title: 'IN SYNC',
-      objective:
-        'Establish a direct, accessible, and accountable communication system where CCS ID126 students can raise concerns, receive verified information, and get updates on matters that require representation—ensuring concerns are properly acknowledged, monitored, and referred rather than overlooked or left unresolved.',
-      implementation: [
-        'Establish a dedicated private assistance channel through Telegram and an approved alternative contact method, publishing service hours, submission guidelines, response targets, and institutional referral contacts.',
-        'Assign rotating committee members to monitor incoming inquiries during published service hours, with at least one designated officer and a backup checking and acknowledging messages.',
-        'Categorize concerns into (1) academic, (2) administrative, (3) organizational, and (4) student-life matters, assigning each to a responsible officer in a restricted-access tracker.',
-        'Address general inquiries and refer concerns requiring institutional action to appropriate university offices or authorized representatives, coordinating follow-ups when necessary.'
-      ],
-      resources: [
-        'Telegram private assistance account & approved alternative contact channel',
-        'Google Sheets restricted case tracker',
-        'Assigned case coordinator and rotating backup officers',
-        'Verified university office and referral directory',
-        'Standardized response, escalation, privacy, data retention, and sensitive-case guidelines',
-        'Published service hours and response targets'
-      ]
+      details:
+        'IN SYNC is a dedicated student assistance and communication platform that connects CATCH2T30 directly with their batch government. Through an accessible messaging channel, students can raise academic, administrative, organizational, and student-life concerns, seek verified information, and receive guidance. A designated team will monitor inquiries, coordinate with appropriate university offices when necessary, and provide follow-ups to ensure that student concerns are acknowledged, tracked, and properly addressed.'
     },
     {
       category: 'gueco',
       categoryLabel: 'GUECO • Platform 02',
       badgeColor: 'bg-[#7AC0BA]/20 text-[#7AC0BA] border border-[#7AC0BA]/35',
       title: 'THE D-BUG',
-      objective:
-        'Establish a structured and transparent avenue for CCS ID126 students to identify recurring academic, organizational, and student-life concerns and propose practical solutions—transforming suggestions into evaluated, actionable improvements through feasibility screening, consultation, and small-scale pilot implementation.',
-      implementation: [
-        'Launch a QR-accessible Google Form allowing students to submit a specific problem, proposed solution, and intended beneficiaries, kept open monthly with a published cutoff per review cycle.',
-        'Post end-of-month updates showing approved proposal summaries and progress (Under Review, For Consultation, Approved for Pilot, In Progress, or Completed/Deferred) with identifying details removed unless authorized.',
-        'Assign an evaluation board to consolidate duplicates and assess proposals based on (1) student impact, (2) practicality, (3) manpower, (4) cost, (5) existing initiatives, and (6) required approvals.',
-        'Shortlist up to three feasible proposals monthly, assign a project head, and select one for pilot implementation when resources, demand, and approvals permit (targeting at least one completed pilot per academic term).'
-      ],
-      resources: [
-        'Google Forms, Google Sheets, QR codes, and existing DLSU Workspace student accounts',
-        'Designated project coordinator and student volunteers',
-        'Standardized evaluation rubric & Canva for monthly progress updates',
-        'Coordination with relevant university offices and recognized organizations'
-      ]
+      details:
+        'THE D-BUG is a student-driven proposal platform designed to turn everyday concerns into practical solutions. Through a QR-accessible form, CATCH2T30 students can identify recurring problems and suggest improvements that directly benefit the batch. Submitted proposals will undergo evaluation based on impact, feasibility, and available resources, with selected ideas considered for pilot implementation. Regular progress updates will allow students to track how their suggestions develop into concrete initiatives.'
     },
     {
       category: 'gueco',
       categoryLabel: 'GUECO • Platform 03',
       badgeColor: 'bg-[#149E92]/25 text-[#7AC0BA] border border-[#7AC0BA]/30',
-      title: 'RADAR 126',
-      objective:
-        'Establish a centralized and coordinated information dissemination network ensuring CCS ID126 students receive timely, accurate, and relevant updates on academic announcements, scholarships, organizational opportunities, university events, student activities, and important deadlines across multiple platforms and block representatives.',
-      implementation: [
-        'Create a coordinated information system across (1) Facebook, (2) Instagram, and (3) Telegram using official CATCH2T30 pages (subject to approval), adapting formats while keeping information consistent.',
-        'Assign a communications committee to regularly monitor official DLSU announcements, university offices, recognized student organizations, and verified opportunity providers.',
-        'Organize announcements into three channels: RADAR NOW (urgent academic advisories, admin announcements, approaching deadlines), RADAR DROP (scholarships, competitions, applications, CCS events), and RADAR ROUTE (concise what/where/when/how-to guides and official links).',
-        'Develop a standardized publication schedule featuring a weekly roundup of deadlines and opportunities alongside timely alerts for urgent matters.'
-      ],
-      resources: [
-        'Facebook and Instagram accounts, Telegram announcement channel, and existing block group chats',
-        'Designated course representatives and contact directory',
-        'Communications committee members & Google Sheets editorial calendar/tracker',
-        'Official DLSU, CCS, and recognized organization information sources',
-        'Canva, standardized announcement templates, and source-verification/correction guidelines'
-      ]
+      title: 'RADAR:126',
+      details:
+        'RADAR:126 is a centralized information network dedicated to keeping CATCH2T30 updated on academic announcements, important deadlines, scholarships, competitions, and student opportunities. It features three information channels: RADAR NOW for urgent announcements, RADAR DROP for opportunities and activities, and RADAR ROUTE for essential step-by-step guides. Through coordinated social media updates, block representatives, and weekly roundups, the platform ensures that verified and relevant information reaches more students.'
     },
     {
       category: 'gueco',
       categoryLabel: 'GUECO • Platform 04',
       badgeColor: 'bg-[#7AC0BA]/20 text-[#7AC0BA] border border-[#7AC0BA]/35',
       title: 'ONE LAST BYTE',
-      objective:
-        'Create a centralized academic resource directory where CCS ID126 students can easily access reviewers, study materials, useful applications, tutorials, and practical academic advice—making academic preparation more accessible, particularly during midterms and finals.',
-      implementation: [
-        'Create a centralized Google Drive repository organized by (1) program, (2) course, and (3) resource category containing student-contributed and online reviewers, lecture summaries, practice exercises, and supplementary materials.',
-        'Include a dedicated section for recommended academic applications, study tools, video tutorials, productivity resources, and practical advice from upperclassmen.',
-        'Compile reviewers, practice materials, study guides, and preparation checklists into organized midterm and final examination folders updated ahead of major assessment periods.',
-        'Establish a Google Form for voluntary contributions from students and upperclassmen, with a designated committee organizing submissions, creating original materials, and ensuring academic integrity.'
-      ],
-      resources: [
-        'Google Drive, Google Forms, Google Sheets (resource tracking), QR codes, and existing DLSU Workspace accounts',
-        'Student-contributed reviewers, academic materials, and recommended online learning tools',
-        'Volunteer student/upperclassman contributors and designated repository coordinators',
-        'Coordination with recognized CCS academic organizations (such as LSCS, Peer Tutors Society, and the USG)',
-        'Resource verification and academic integrity guidelines'
-      ]
+      details:
+        'ONE LAST BYTE is a centralized academic resource hub designed to make studying more accessible, organized, and convenient for CCS students. Through a shared Google Drive repository, students can access reviewers, lecture summaries, practice exercises, video tutorials, recommended applications, and useful academic advice. With contributions from students and upperclassmen, the platform will provide organized learning materials and dedicated examination resources for midterms and finals, helping CATCH2T30 prepare with greater confidence.'
     },
     {
       category: 'gueco',
       categoryLabel: 'GUECO • Platform 05',
       badgeColor: 'bg-[#149E92]/25 text-[#7AC0BA] border border-[#7AC0BA]/30',
       title: 'BEYOND THE BINARY',
-      objective:
-        'Promote socially responsible CCS ID126 students by connecting their technological knowledge and creativity with real challenges affecting Filipino communities—demonstrating how accessible digital tools, tech literacy, and practical resources can address misinformation, digital exclusion, online safety, and limited tech access.',
-      implementation: [
-        'Establish a term-based civic technology initiative selecting one relevant national or community concern per academic term focused on digital literacy, misinformation, online safety, or accessibility.',
-        'Develop beginner-friendly digital literacy materials covering essential digital skills, online safety, privacy protection, and responsible internet use, distributing outputs online or via community partners.',
-        'Select and implement one feasible project per academic term overseen by a small batch government project team handling research, development, verification, publication, and impact evaluation.'
-      ],
-      resources: [
-        'Google Drive (educational materials & documentation), Canva, and Google Slides',
-        'Official CATCH2T30 social media platforms',
-        'Designated batch government project team and optional student contributors',
-        'Credible research sources and recognized organizations or community partners',
-        'Basic content verification, accessibility guidelines, and required partnership approvals'
-      ]
+      details:
+        'BEYOND THE BINARY is a civic technology initiative that empowers CCS students to use their technological knowledge beyond the classroom. By developing accessible digital resources and practical community-oriented solutions, the platform addresses pressing concerns such as misinformation, online safety, digital exclusion, and technological literacy. Through student-led projects and potential partnerships with community organizations, it aims to transform technical skills into meaningful contributions to society, with one feasible project targeted each academic term.'
     },
     {
       category: 'gueco',
       categoryLabel: 'GUECO • Platform 06',
       badgeColor: 'bg-[#7AC0BA]/20 text-[#7AC0BA] border border-[#7AC0BA]/35',
       title: 'TECH A SEC',
-      objective:
-        'Establish a student-led podcast and digital media initiative connecting CCS ID126 students to developments in technology, national affairs, and the global computing industry—making AI, cybersecurity, digital governance, and emerging innovations accessible through engaging discussions.',
-      implementation: [
-        'Produce one recorded episode per month across accessible platforms (Facebook, YouTube, and Spotify where feasible), starting with short-form ~10-minute discussions.',
-        'Organize episodes into three recurring segments: (A) OFF THE GRID (national/international tech, AI, cybersecurity, and computing breakthroughs), (B) THE BACKEND (social, ethical, economic, and political implications of tech), and (C) OPEN MIC (conversations with CCS students, upperclassmen, or industry professionals).',
-        'Assign a media team for topic research, scripting, recording, and editing, sourcing topics via student suggestions and publishing short episode highlights as Reels.'
-      ],
-      resources: [
-        'Official CATCH2T30 Facebook, YouTube, and Spotify distribution channels',
-        'Google Forms (topic suggestions & feedback) and Google Docs/Sheets (scripts & production schedule)',
-        'Canva, CapCut, smartphones, microphones, and available recording spaces',
-        'Designated podcast production team, volunteer student hosts, and invited resource speakers',
-        'Credible national and international news and technology sources'
-      ]
+      details:
+        'TECH A SEC is a student-led podcast and digital discussion platform that brings technology, current affairs, and industry developments closer to CATCH2T30. Through monthly episodes, students can explore artificial intelligence, cybersecurity, emerging innovations, digital governance, and their wider societal implications. Featuring technology updates, critical discussions, and conversations with students and industry professionals, the platform encourages informed perspectives, meaningful dialogue, and greater awareness of the rapidly evolving computing world.'
     },
     {
       category: 'gueco',
       categoryLabel: 'GUECO • Platform 07',
       badgeColor: 'bg-[#149E92]/25 text-[#7AC0BA] border border-[#7AC0BA]/30',
       title: 'ON THE DOT',
-      objective:
-        'Establish a centralized student welfare service providing CCS ID126 students with convenient access to essential academic equipment and everyday necessities through an organized borrowing and classroom delivery system—reducing unnecessary expenses and academic disruptions.',
-      implementation: [
-        'Operate a batch-managed borrowing and student assistance service offering school supplies, calculators, power banks, chargers, cables, adapters, umbrellas, rain boots, and other reusable essentials.',
-        'Build a centralized digital reservation system via Google Forms and Sheets so students can check item availability, request printing services, reserve equipment, and book classroom delivery slots (with an additional fee).',
-        'Organize scheduled classroom deliveries and item returns through designated batch personnel during published service hours, scaling slots based on demand.',
-        'Monitor inventory, borrowing transactions, and service performance centrally, publishing updated availability and schedules on official CATCH2T30 channels.'
-      ],
-      resources: [
-        'Google Forms (reservations & printing), Google Sheets (inventory & tracking), Google Drive (printing files), and QR catalog',
-        'Official CATCH2T30 communication platforms',
-        'Calculators, power banks, chargers, cables, adapters, umbrellas, rain boots, and reusable essentials',
-        'Designated inventory coordinator, delivery personnel, secure storage, and return points',
-        'Standardized borrowing/accountability guidelines, initial inventory budget/donations, and university approvals'
-      ]
+      details:
+        'ON THE DOT is a student welfare and borrowing service designed to provide convenient access to everyday academic essentials. Students can borrow calculators, power banks, chargers, umbrellas, and other reusable necessities without having to purchase them. Through an organized digital reservation system, CATCH2T30 can check item availability, reserve equipment, request printing services, and arrange classroom delivery for an additional fee. The initiative aims to reduce unnecessary expenses and make essential resources more accessible.'
     },
     {
       category: 'gueco',
       categoryLabel: 'GUECO • Platform 08',
       badgeColor: 'bg-[#7AC0BA]/20 text-[#7AC0BA] border border-[#7AC0BA]/35',
       title: 'LIFE 2.0',
-      objective:
-        'Establish a centralized repository of CCS-developed applications, websites, databases, and information systems that students and succeeding batches can access and continue with prior creator authorization—preventing promising academic and independent projects from being abandoned.',
-      implementation: [
-        'Coordinate with CCS faculty advisers, capstone advisers, and student organizations at term-end to collect project descriptions, demos, source files, setup instructions, known limitations, and written rights-holder authorization.',
-        'Maintain a centralized project catalog categorized by mobile apps, websites, databases, and information systems—displaying purpose, screenshots, completed features, unresolved errors, suggested improvements, and required software.',
-        'Open project adoption applications during the first two weeks of each term; students submit a one-page proposal evaluated within one week based on feasibility, relevance, resources, and permissions.',
-        'Grant approved developers file access and previous notes, requiring three milestones, bi-weekly progress updates, a shared development log, and referrals to volunteer technical mentors.',
-        'Require end-of-term system demonstrations, revised source files, setup instructions, and contributor permissions before publishing updated projects and exploring campus/community pilot deployment.'
-      ],
-      resources: [
-        'Centralized project website/catalog and restricted cloud storage for project files and documentation',
-        'Project evaluation and coordination committee & volunteer technical mentors from CCS organizations',
-        'Project submission/adoption guidelines, written creator authorization, and contributor agreements',
-        'Standardized project documentation and development logs',
-        'Coordination with faculty advisers, capstone coordinators, potential beneficiaries, and institutional approvers'
-      ]
+      details:
+        'LIFE 2.0 is a project continuation initiative that gives student-developed technologies a purpose beyond academic requirements. Through a centralized repository of applications, websites, databases, and information systems, CCS students can explore existing projects and apply to further develop them with authorization from their original creators. By encouraging project adoption, continuous improvement, and collaboration across batches, the platform ensures that promising ideas are not abandoned after submission but given opportunities to grow into practical solutions.'
     },
 
     // MASANGKAY PLATFORMS
@@ -496,91 +393,53 @@ document.addEventListener('DOMContentLoaded', () => {
       </svg>
     `;
 
-    // Note: Added `items-start` to grid so expanding one card doesn't stretch its neighbor's empty space
     platformGrid.classList.add('items-start');
 
-    platformGrid.innerHTML = filtered.map((policy, index) => {
-      const bodyMarkup = policy.category === 'gueco'
-        ? `
-          <div class="space-y-5 text-sm sm:text-base leading-relaxed">
-            <div>
-              <h4 class="font-adriana text-xs font-bold uppercase tracking-wider text-[#7AC0BA] mb-1.5">
-                Objective
-              </h4>
-              <p class="text-[#D4E4E2]">${policy.objective}</p>
-            </div>
-
-            <div class="pt-4 border-t border-[#149E92]/30">
-              <h4 class="font-adriana text-xs font-bold uppercase tracking-wider text-[#7AC0BA] mb-2">
-                Implementation
-              </h4>
-              <ol class="list-decimal pl-5 space-y-2 text-[#D4E4E2]">
-                ${policy.implementation.map(step => `<li>${step}</li>`).join('')}
-              </ol>
-            </div>
-
-            <div class="pt-4 border-t border-[#149E92]/30">
-              <h4 class="font-adriana text-xs font-bold uppercase tracking-wider text-[#7AC0BA] mb-2">
-                Resources Needed
-              </h4>
-              <ul class="list-disc pl-5 space-y-1.5 text-[#D4E4E2]">
-                ${policy.resources.map(res => `<li>${res}</li>`).join('')}
-              </ul>
-            </div>
-          </div>
-        `
-        : `
+    platformGrid.innerHTML = filtered.map((policy, index) => `
+      <article class="platform-card bg-[#0B0F0F] hover:bg-[#111717] rounded-3xl border border-[#149E92]/45 hover:border-[#7AC0BA] shadow-civic hover:shadow-civic-lg transition-all duration-300 overflow-hidden">
+        
+        <!-- Clickable Title Header -->
+        <button
+          type="button"
+          aria-expanded="false"
+          aria-controls="policy-details-${index}"
+          class="platform-toggle-btn w-full text-left p-7 sm:p-8 flex items-center justify-between gap-4 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-[#7AC0BA]"
+        >
           <div>
-            <p class="text-[#D4E4E2] text-sm sm:text-base leading-relaxed">
-              ${policy.details}
-            </p>
-          </div>
-        `;
-
-      return `
-        <article class="platform-card bg-[#0B0F0F] hover:bg-[#111717] rounded-3xl border border-[#149E92]/45 hover:border-[#7AC0BA] shadow-civic hover:shadow-civic-lg transition-all duration-300 overflow-hidden">
-          
-          <!-- Clickable Title Header -->
-          <button
-            type="button"
-            aria-expanded="false"
-            aria-controls="policy-details-${index}"
-            class="platform-toggle-btn w-full text-left p-7 sm:p-8 flex items-center justify-between gap-4 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-[#7AC0BA]"
-          >
-            <div>
-              <div class="mb-3">
-                <span class="inline-block px-3 py-1 rounded-full text-xs font-bold ${policy.badgeColor}">
-                  ${policy.categoryLabel}
-                </span>
-              </div>
-              <h3 class="font-ttlakes text-xl sm:text-2xl font-extrabold tracking-wide text-[#FFFFFF]">
-                ${policy.title}
-              </h3>
+            <div class="mb-3">
+              <span class="inline-block px-3 py-1 rounded-full text-xs font-bold ${policy.badgeColor}">
+                ${policy.categoryLabel}
+              </span>
             </div>
-
-            <!-- Chevron Toggle Indicator -->
-            <div class="w-10 h-10 rounded-xl bg-[#111717] border border-[#149E92]/40 flex items-center justify-center text-[#7AC0BA] shrink-0 transition-transform duration-300 toggle-chevron">
-              <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
-              </svg>
-            </div>
-          </button>
-
-          <!-- Collapsible Full Details (Hidden Initially) -->
-          <div id="policy-details-${index}" class="platform-details hidden px-7 pb-7 sm:px-8 sm:pb-8 pt-0">
-            <div class="bg-[#111717] border border-[#7AC0BA]/30 rounded-2xl p-4 sm:p-5 flex items-start gap-4">
-              <div class="w-11 h-11 rounded-xl bg-[#149E92]/25 text-[#7AC0BA] flex items-center justify-center shrink-0 mt-0.5">
-                ${policy.category === 'gueco' ? guecoDocumentIcon : masangkayScrollIcon}
-              </div>
-              <div class="flex-1 min-w-0">
-                ${bodyMarkup}
-              </div>
-            </div>
+            <h3 class="font-ttlakes text-xl sm:text-2xl font-extrabold tracking-wide text-[#FFFFFF]">
+              ${policy.title}
+            </h3>
           </div>
 
-        </article>
-      `;
-    }).join('');
+          <!-- Chevron Toggle Indicator -->
+          <div class="w-10 h-10 rounded-xl bg-[#111717] border border-[#149E92]/40 flex items-center justify-center text-[#7AC0BA] shrink-0 transition-transform duration-300 toggle-chevron">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+            </svg>
+          </div>
+        </button>
+
+        <!-- Collapsible Full Details (Hidden Initially) -->
+        <div id="policy-details-${index}" class="platform-details hidden px-7 pb-7 sm:px-8 sm:pb-8 pt-0">
+          <div class="bg-[#111717] border border-[#7AC0BA]/30 rounded-2xl p-4 sm:p-5 flex items-start gap-4">
+            <div class="w-11 h-11 rounded-xl bg-[#149E92]/25 text-[#7AC0BA] flex items-center justify-center shrink-0 mt-0.5">
+              ${policy.category === 'gueco' ? guecoDocumentIcon : masangkayScrollIcon}
+            </div>
+            <div class="flex-1 min-w-0">
+              <p class="text-[#D4E4E2] text-sm sm:text-base leading-relaxed">
+                ${policy.details}
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </article>
+    `).join('');
 
     // Attach click listeners to toggle full details on each card
     const toggleButtons = platformGrid.querySelectorAll('.platform-toggle-btn');
@@ -591,11 +450,9 @@ document.addEventListener('DOMContentLoaded', () => {
         const chevron = btn.querySelector('.toggle-chevron');
         const isExpanded = btn.getAttribute('aria-expanded') === 'true';
 
-        // Toggle visibility & accessibility state
         btn.setAttribute('aria-expanded', String(!isExpanded));
         detailsPanel.classList.toggle('hidden');
 
-        // Rotate chevron & highlight active card border
         if (!isExpanded) {
           chevron.classList.add('rotate-180', 'bg-[#149E92]', 'text-[#FFFFFF]');
           card.classList.add('border-[#7AC0BA]', 'bg-[#111717]');
