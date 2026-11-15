@@ -138,6 +138,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const candidateProfiles = {
     gueco: {
       name: 'Dom Gueco',
+      tagline: 'Empowering a future of boundless innovation.',
       role: 'Daluyan Coalition 2026',
       tag: 'CATCH2T30 Batch Representative',
       image: 'candie1.jpeg',
@@ -190,6 +191,7 @@ document.addEventListener('DOMContentLoaded', () => {
     },
     masangkay: {
       name: 'Lhei Masangkay',
+      tagline: 'Building digitally empowered communities to ignite your potentials within.',
       role: 'Daluyan Coalition 2026',
       tag: 'CATCH2T30 Batch Legislator',
       image: 'candie2.jpeg',
@@ -236,9 +238,19 @@ document.addEventListener('DOMContentLoaded', () => {
     const data = candidateProfiles[candidateKey];
     if (!data || !modal) return;
 
+    const modalCandidateTagline = document.getElementById('modal-candidate-tagline');
+
     modalCandidateImg.src = data.image;
     modalCandidateImg.alt = data.name;
+
+    if (candidateKey === 'gueco') {
+      modalCandidateImg.className = 'w-full h-full object-cover object-[center_120%] scale-[1.30] origin-center';
+    } else {
+      modalCandidateImg.className = 'w-full h-full object-cover object-[center_12%] scale-[1.30] origin-center';
+    }
+
     modalCandidateHeading.textContent = data.name;
+    if (modalCandidateTagline) modalCandidateTagline.textContent = data.tagline;
     modalCandidateRole.textContent = data.role;
     modalCandidateTag.textContent = data.tag;
 
