@@ -31,9 +31,10 @@ document.addEventListener('DOMContentLoaded', () => {
     link.addEventListener('click', () => toggleMobileMenu(true));
   });
 
-  // Highlight active navigation link based on scroll position
+  // Highlight active navigation link based on scroll position (Desktop & Mobile)
   const sections = ['about', 'candidates', 'platforms', 'contacts'];
-  const navLinks = document.querySelectorAll('.nav-link');
+  const navLinks = document.querySelectorAll('.nav-link, .mobile-nav-link[data-nav-link]');
+  const navbar = document.getElementById('navbar');
 
   window.addEventListener('scroll', () => {
     const scrollPos = window.scrollY + 140;
@@ -57,6 +58,13 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }, { passive: true });
+
+  // Close mobile menu when tapping outside the navbar
+  document.addEventListener('click', (e) => {
+    if (navbar && !navbar.contains(e.target) && !mobileMenu.classList.contains('hidden')) {
+      toggleMobileMenu(true);
+    }
+  });
 
 
   /* -------------------------------------------------------------------
@@ -283,7 +291,7 @@ document.addEventListener('DOMContentLoaded', () => {
     modalAchievementsList.innerHTML = data.achievements
       .map(item => `
         <li class="flex items-start gap-2.5">
-          <span class="w-5 h-5 rounded-full bg-[#149E92] text-[#FFFFFF] text-xs font-bold flex items-center justify-center shrink-0 mt-0.5">✓</span>
+          <span class="w-5 h-5 rounded-full bg-[#149E92] text-[#FFFFFF] text-xs font-bold flex items-center justify-center shrink-0 mt-0.5" aria-hidden="true">★</span>
           <div class="flex-1">
             <span class="text-[#FFFFFF] font-medium">${item.title}</span>
             <span class="ml-1.5 text-xs font-semibold text-[#7AC0BA]">(${item.year})</span>

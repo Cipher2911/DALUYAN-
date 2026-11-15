@@ -133,12 +133,54 @@
         
         <!-- Brand Logo & Coalition Emblem (TT Lakes Neue) -->
         <a href="#top" class="flex items-center gap-3 group focus:outline-none focus-visible:ring-2 focus-visible:ring-[#7AC0BA] rounded-xl p-1">
-          <div class="w-10 h-10 rounded-xl bg-[#000000] flex items-center justify-center shadow-md border border-[#7AC0BA] group-hover:scale-105 transition-transform">
-            <!-- Custom Civic Upward Chevron / Torch Emblem -->
-            <svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-              <path d="M12 3L4 9.5L6.2 11.3L12 6.6L17.8 11.3L20 9.5L12 3Z" fill="#7AC0BA"/>
-              <path d="M12 9.5L5.5 14.8L7.7 16.6L12 13.1L16.3 16.6L18.5 14.8L12 9.5Z" fill="#FFFFFF"/>
-              <rect x="10.5" y="16.5" width="3" height="4.5" rx="1.5" fill="#149E92"/>
+          <div class="w-10 h-10 rounded-xl bg-[#000000] flex items-center justify-center shadow-[0_0_14px_rgba(34,229,216,0.45)] border border-[#7AC0BA] group-hover:scale-105 transition-transform">
+            <!-- Layered 3-Shade Glowing Teal Infinity Emblem -->
+            <svg class="w-7 h-7 overflow-visible" viewBox="0 0 36 24" fill="none" aria-hidden="true">
+              <defs>
+                <filter id="navInfinityGlow" x="-30%" y="-30%" width="160%" height="160%">
+                  <feGaussianBlur stdDeviation="1.4" result="blur" />
+                  <feMerge>
+                    <feMergeNode in="blur" />
+                    <feMergeNode in="SourceGraphic" />
+                  </feMerge>
+                </filter>
+                <linearGradient id="navTealGrad" x1="2" y1="6" x2="34" y2="18" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stop-color="#0F7A71" />
+                  <stop offset="50%" stop-color="#22E5D8" />
+                  <stop offset="100%" stop-color="#9BFFF8" />
+                </linearGradient>
+              </defs>
+
+              <!-- Layer 1 (Back): Deep Teal Offset -->
+              <path
+                d="M18 12C15.2 8.2 11.8 6.5 8.5 6.5C5.2 6.5 2.8 8.9 2.8 12C2.8 15.1 5.2 17.5 8.5 17.5C11.8 17.5 15.2 15.8 18 12ZM18 12C20.8 8.2 24.2 6.5 27.5 6.5C30.8 6.5 33.2 8.9 33.2 12C33.2 15.1 30.8 17.5 27.5 17.5C24.2 17.5 20.8 15.8 18 12Z"
+                transform="translate(0, 2.2)"
+                stroke="#0F7A71"
+                stroke-width="2.4"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+
+              <!-- Layer 2 (Middle): Signature Daluyan Teal -->
+              <path
+                d="M18 12C15.2 8.2 11.8 6.5 8.5 6.5C5.2 6.5 2.8 8.9 2.8 12C2.8 15.1 5.2 17.5 8.5 17.5C11.8 17.5 15.2 15.8 18 12ZM18 12C20.8 8.2 24.2 6.5 27.5 6.5C30.8 6.5 33.2 8.9 33.2 12C33.2 15.1 30.8 17.5 27.5 17.5C24.2 17.5 20.8 15.8 18 12Z"
+                stroke="url(#navTealGrad)"
+                stroke-width="2.4"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                filter="url(#navInfinityGlow)"
+              />
+
+              <!-- Layer 3 (Front): Luminous Ice-Teal Highlight -->
+              <path
+                d="M18 12C15.2 8.2 11.8 6.5 8.5 6.5C5.2 6.5 2.8 8.9 2.8 12C2.8 15.1 5.2 17.5 8.5 17.5C11.8 17.5 15.2 15.8 18 12ZM18 12C20.8 8.2 24.2 6.5 27.5 6.5C30.8 6.5 33.2 8.9 33.2 12C33.2 15.1 30.8 17.5 27.5 17.5C24.2 17.5 20.8 15.8 18 12Z"
+                transform="translate(0, -2.2)"
+                stroke="#9BFFF8"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                filter="url(#navInfinityGlow)"
+              />
             </svg>
           </div>
           <div class="font-ttlakes">
@@ -202,20 +244,20 @@
 
     <!-- Mobile Dropdown Menu -->
     <div id="mobile-menu" class="hidden md:hidden bg-[#149E92] border-t border-[#7AC0BA] px-4 pt-3 pb-6 space-y-2 shadow-2xl">
-      <a href="#about" class="mobile-nav-link block px-4 py-3 rounded-xl text-base font-bold text-[#FFFFFF] hover:text-[#000000] hover:bg-[#7AC0BA] transition-colors">
+      <a href="#about" data-nav-link="about" class="mobile-nav-link font-adriana uppercase tracking-wider block px-4 py-3 rounded-xl text-sm font-bold text-[#FFFFFF] hover:text-[#000000] hover:bg-[#7AC0BA] transition-colors">
         About
       </a>
-      <a href="#candidates" class="mobile-nav-link block px-4 py-3 rounded-xl text-base font-bold text-[#FFFFFF] hover:text-[#000000] hover:bg-[#7AC0BA] transition-colors">
+      <a href="#candidates" data-nav-link="candidates" class="mobile-nav-link font-adriana uppercase tracking-wider block px-4 py-3 rounded-xl text-sm font-bold text-[#FFFFFF] hover:text-[#000000] hover:bg-[#7AC0BA] transition-colors">
         Candidates
       </a>
-      <a href="#platforms" class="mobile-nav-link block px-4 py-3 rounded-xl text-base font-bold text-[#FFFFFF] hover:text-[#000000] hover:bg-[#7AC0BA] transition-colors">
+      <a href="#platforms" data-nav-link="platforms" class="mobile-nav-link font-adriana uppercase tracking-wider block px-4 py-3 rounded-xl text-sm font-bold text-[#FFFFFF] hover:text-[#000000] hover:bg-[#7AC0BA] transition-colors">
         Platforms
       </a>
-      <a href="#contacts" class="mobile-nav-link block px-4 py-3 rounded-xl text-base font-bold text-[#FFFFFF] hover:text-[#000000] hover:bg-[#7AC0BA] transition-colors">
+      <a href="#contacts" data-nav-link="contacts" class="mobile-nav-link font-adriana uppercase tracking-wider block px-4 py-3 rounded-xl text-sm font-bold text-[#FFFFFF] hover:text-[#000000] hover:bg-[#7AC0BA] transition-colors">
         Contacts
       </a>
       <div class="pt-3 border-t border-[#7AC0BA]/50">
-        <a href="#platforms" class="mobile-nav-link w-full flex items-center justify-center gap-2 px-4 py-3.5 rounded-xl bg-[#000000] text-[#7AC0BA] border border-[#7AC0BA] font-bold text-base shadow-md">
+        <a href="#platforms" class="mobile-nav-link font-adriana uppercase tracking-wider w-full flex items-center justify-center gap-2 px-4 py-3.5 rounded-xl bg-[#000000] text-[#7AC0BA] border border-[#7AC0BA] font-bold text-sm shadow-md">
           <span>Check Our Platforms</span>
           <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true">
             <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
@@ -232,7 +274,7 @@
     <section
       id="opening-cover"
       aria-label="Daluyan Coalition Opening Banner"
-      class="relative w-full min-h-[calc(100vh-5rem)] bg-[#1C1C1C] overflow-hidden flex items-center justify-center border-b border-[#149E92]/25 px-4 sm:px-8"
+      class="relative w-full min-h-[calc(100dvh-5rem)] bg-[#1C1C1C] overflow-hidden flex items-center justify-center border-b border-[#149E92]/25 px-4 sm:px-8"
     >
       <!-- Subtle Ambient Teal Glow Behind Logo -->
       <div
@@ -460,7 +502,8 @@
         <div class="flex flex-col items-center space-y-7">
 
           <!-- Main Campaign Headline (TT Lakes Neue Style) -->
-          <h1 class="font-ttlakes text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-black tracking-wider uppercase leading-[0.98] text-[#09B8C8]">
+          <!-- Inside Hero Section -->
+          <h1 class="font-ttlakes text-4xl xs:text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-black tracking-wider uppercase leading-[1.02] text-[#09B8C8]">
             DALUYAN <br />
             <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#149E92] via-[#65FFFF] to-[#DFF5ED]">
               COALITION
@@ -495,24 +538,24 @@
     <!-- =====================================================================
          SLOGAN BANNER SECTION (SPLIT-CORNER WITH GUECO & MASANGKAY)
          ===================================================================== -->
-    <section aria-label="Campaign Slogan" class="relative overflow-hidden border-t border-b border-[#149E92]/25 pt-44 pb-16 sm:pt-56 sm:pb-12 min-h-[580px] sm:min-h-[820px] lg:min-h-[720px] flex items-end bg-[#000000]">
+    <section aria-label="Campaign Slogan" class="relative overflow-hidden border-t border-b border-[#149E92]/25 pt-28 pb-12 sm:pt-56 sm:pb-12 min-h-[480px] sm:min-h-[820px] lg:min-h-[720px] flex items-end bg-[#000000]">
       
       <!-- Full-Bleed Background Photo -->
       <img
         src="slogan.png"
         alt="Daluyan Coalition Candidates"
-        class="absolute inset-0 w-full h-full object-cover object-[center_55%]"
+        class="absolute inset-0 w-full h-full object-cover object-[center_35%] sm:object-[center_55%]"
         style="filter: contrast(1.06) saturate(1.12);"
       />
 
       <!-- Janret-Style Soft Bottom-Up Gradient -->
       <div
-        class="absolute inset-0 bg-gradient-to-t from-[#091E1C]/85 via-[#0F3D39]/35 to-transparent"
+        class="absolute inset-0 bg-gradient-to-t from-[#091E1C]/90 via-[#0F3D39]/40 to-transparent"
         aria-hidden="true"
       ></div>
 
       <!-- Bottom Split-Corner Content Container -->
-      <div class="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-64 sm:pt-80 flex flex-col lg:flex-row lg:items-end justify-between gap-8">
+      <div class="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-36 sm:pt-80 flex flex-col lg:flex-row lg:items-end justify-between gap-6 sm:gap-8">
         
         <!-- Bottom-Left: Enlarged Adriana Slogan -->
         <div class="text-left max-w-2xl">
@@ -732,13 +775,13 @@
         </div>
 
         <!-- Interactive Candidate Surname Filter Tabs -->
-        <div role="tablist" aria-label="Candidate Platform Filter" class="flex flex-wrap items-center justify-center gap-3 sm:gap-4 mb-12">
+        <div role="tablist" aria-label="Candidate Platform Filter" class="grid grid-cols-2 sm:flex sm:flex-wrap items-stretch sm:items-center justify-center gap-2.5 sm:gap-4 mb-10 sm:mb-12 max-w-xl sm:max-w-none mx-auto">
           <button
             type="button"
             role="tab"
             aria-selected="true"
             data-category="gueco"
-            class="platform-tab font-adriana uppercase tracking-wider px-7 py-3.5 rounded-2xl text-sm font-bold transition-all cursor-pointer bg-[#149E92] text-[#FFFFFF] border border-[#7AC0BA] shadow-md"
+            class="platform-tab font-adriana uppercase tracking-wider px-3 sm:px-7 py-3.5 rounded-2xl text-xs sm:text-sm font-bold transition-all cursor-pointer bg-[#149E92] text-[#FFFFFF] border border-[#7AC0BA] shadow-md text-center"
           >
             GUECO'S PLATFORMS
           </button>
@@ -747,7 +790,7 @@
             role="tab"
             aria-selected="false"
             data-category="masangkay"
-            class="platform-tab font-adriana uppercase tracking-wider px-7 py-3.5 rounded-2xl text-sm font-bold transition-all cursor-pointer bg-[#0B0F0F] text-[#D4E4E2] hover:bg-[#111717] hover:text-[#7AC0BA] hover:border-[#7AC0BA]/60 border border-[#149E92]/45"
+            class="platform-tab font-adriana uppercase tracking-wider px-3 sm:px-7 py-3.5 rounded-2xl text-xs sm:text-sm font-bold transition-all cursor-pointer bg-[#0B0F0F] text-[#D4E4E2] hover:bg-[#111717] hover:text-[#7AC0BA] hover:border-[#7AC0BA]/60 border border-[#149E92]/45 text-center"
           >
             MASANGKAY'S LA AGENDA
           </button>
@@ -949,11 +992,48 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-8 pb-8 border-b border-[#149E92]/25">
         <div class="flex items-center gap-3">
-          <div class="w-10 h-10 rounded-xl bg-[#000000] flex items-center justify-center shadow-md border border-[#7AC0BA]">
-            <svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-              <path d="M12 3L4 9.5L6.2 11.3L12 6.6L17.8 11.3L20 9.5L12 3Z" fill="#7AC0BA"/>
-              <path d="M12 9.5L5.5 14.8L7.7 16.6L12 13.1L16.3 16.6L18.5 14.8L12 9.5Z" fill="#FFFFFF"/>
-              <rect x="10.5" y="16.5" width="3" height="4.5" rx="1.5" fill="#149E92"/>
+          <div class="w-10 h-10 rounded-xl bg-[#000000] flex items-center justify-center shadow-[0_0_14px_rgba(34,229,216,0.45)] border border-[#7AC0BA]">
+            <svg class="w-7 h-7 overflow-visible" viewBox="0 0 36 24" fill="none" aria-hidden="true">
+              <defs>
+                <filter id="footerInfinityGlow" x="-30%" y="-30%" width="160%" height="160%">
+                  <feGaussianBlur stdDeviation="1.4" result="blur" />
+                  <feMerge>
+                    <feMergeNode in="blur" />
+                    <feMergeNode in="SourceGraphic" />
+                  </feMerge>
+                </filter>
+                <linearGradient id="footerTealGrad" x1="2" y1="6" x2="34" y2="18" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stop-color="#0F7A71" />
+                  <stop offset="50%" stop-color="#22E5D8" />
+                  <stop offset="100%" stop-color="#9BFFF8" />
+                </linearGradient>
+              </defs>
+
+              <path
+                d="M18 12C15.2 8.2 11.8 6.5 8.5 6.5C5.2 6.5 2.8 8.9 2.8 12C2.8 15.1 5.2 17.5 8.5 17.5C11.8 17.5 15.2 15.8 18 12ZM18 12C20.8 8.2 24.2 6.5 27.5 6.5C30.8 6.5 33.2 8.9 33.2 12C33.2 15.1 30.8 17.5 27.5 17.5C24.2 17.5 20.8 15.8 18 12Z"
+                transform="translate(0, 2.2)"
+                stroke="#0F7A71"
+                stroke-width="2.4"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M18 12C15.2 8.2 11.8 6.5 8.5 6.5C5.2 6.5 2.8 8.9 2.8 12C2.8 15.1 5.2 17.5 8.5 17.5C11.8 17.5 15.2 15.8 18 12ZM18 12C20.8 8.2 24.2 6.5 27.5 6.5C30.8 6.5 33.2 8.9 33.2 12C33.2 15.1 30.8 17.5 27.5 17.5C24.2 17.5 20.8 15.8 18 12Z"
+                stroke="url(#footerTealGrad)"
+                stroke-width="2.4"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                filter="url(#footerInfinityGlow)"
+              />
+              <path
+                d="M18 12C15.2 8.2 11.8 6.5 8.5 6.5C5.2 6.5 2.8 8.9 2.8 12C2.8 15.1 5.2 17.5 8.5 17.5C11.8 17.5 15.2 15.8 18 12ZM18 12C20.8 8.2 24.2 6.5 27.5 6.5C30.8 6.5 33.2 8.9 33.2 12C33.2 15.1 30.8 17.5 27.5 17.5C24.2 17.5 20.8 15.8 18 12Z"
+                transform="translate(0, -2.2)"
+                stroke="#9BFFF8"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                filter="url(#footerInfinityGlow)"
+              />
             </svg>
           </div>
           <div>
@@ -987,7 +1067,7 @@
     <div id="modal-backdrop" class="modal-backdrop fixed inset-0 bg-[#000000]/85 backdrop-blur-sm opacity-0"></div>
 
     <!-- Horizontal Contact-Card Style Modal Box -->
-    <div id="modal-panel" class="modal-panel relative z-10 w-full max-w-4xl bg-[#0B0F0F] rounded-3xl shadow-2xl border border-[#7AC0BA]/60 overflow-hidden opacity-0 scale-95 max-h-[90vh] flex flex-col">
+    <div id="modal-panel" class="modal-panel relative z-10 w-full max-w-4xl bg-[#0B0F0F] rounded-3xl shadow-2xl border border-[#7AC0BA]/60 overflow-hidden opacity-0 scale-95 max-h-[92dvh] flex flex-col">">
       
       <!-- Top Bar -->
       <div class="px-6 py-4 bg-[#111717] border-b border-[#149E92]/40 flex items-center justify-between gap-4 shrink-0">
@@ -1011,14 +1091,14 @@
         <div class="flex flex-col md:flex-row items-center md:items-start gap-6 md:gap-8">
           
           <!-- Left Side: Full Portrait Card -->
-          <div class="w-full max-w-[240px] md:w-60 shrink-0 md:sticky md:top-0">
-            <div class="w-full rounded-3xl bg-[#162323] border border-[#7AC0BA]/40 p-3.5 shadow-civic">
-              <div class="w-full aspect-[3/4] rounded-2xl bg-[#043935] border border-[#149E92]/60 overflow-hidden">
+          <div class="w-full max-w-[175px] sm:max-w-[240px] md:w-60 shrink-0 md:sticky md:top-0">
+            <div class="w-full rounded-2xl sm:rounded-3xl bg-[#162323] border border-[#7AC0BA]/40 p-2.5 sm:p-3.5 shadow-civic">
+              <div class="w-full aspect-[3/4] rounded-xl sm:rounded-2xl bg-[#043935] border border-[#149E92]/60 overflow-hidden">
                 <img
                   id="modal-candidate-img"
                   src="candie1.jpeg"
                   alt="Candidate Portrait"
-                  class="w-full h-full object-cover object-top"
+                  class="w-full h-full object-cover object-[center_28%] scale-[1.28] origin-top"
                 />
               </div>
             </div>
