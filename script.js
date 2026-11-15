@@ -133,37 +133,87 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* -------------------------------------------------------------------
-     3. CANDIDATE PROFILE & LEADERSHIP STATEMENT MODAL
+     3. CANDIDATE PROFILE & CREDENTIALS MODAL
      ------------------------------------------------------------------- */
-  const candidateStatements = {
+  const candidateProfiles = {
     gueco: {
       name: 'Dom Gueco',
-      role: 'Daluyan Coalition 2026 • Representative',
-      tag: 'Batch Representative',
+      role: 'Daluyan Coalition 2026',
+      tag: 'CATCH2T30 Batch Representative',
       image: 'candie1.jpeg',
-      paragraphs: [
-        'As your CATCH2T30 Representative under Daluyan Coalition, my goal is to ensure that no ID126 CCS student is left navigating college life alone—bridging the gap between student concerns, verified information, and concrete action.',
-        'Through structured communication channels, centralized academic resources, and student-led innovation initiatives, we aim to build a batch community that is responsive, transparent, and genuinely accessible to everyone.'
+      academicInfo: {
+        collegeProgram: 'Bachelor of Science in Information Systems (BSIS)',
+        highSchool: 'Parañaque Science High School Senior High School'
+      },
+      organizations: [
+        {
+          year: 'A.Y. 2025–2026',
+          role: 'Associate Editor-in-Chief',
+          org: 'The Momentum'
+        },
+        {
+          year: 'A.Y. 2025–2026',
+          role: 'Project Head',
+          org: 'Literary Talks - ParSci'
+        },
+        {
+          year: 'A.Y. 2024–2025',
+          role: 'Opinion Editor',
+          org: 'The Momentum'
+        },
+        {
+          year: 'A.Y. 2020–2024',
+          role: 'Editor-in-Chief',
+          org: 'San Antonio Herald'
+        }
       ],
-      priorities: [
-        'Direct & accountable student assistance through IN SYNC and RADAR 126.',
-        'Centralized academic reviewers, equipment borrowing, and project continuity via ONE LAST BYTE, ON THE DOT, and LIFE 2.0.',
-        'Socially responsible tech advocacy through THE D-BUG, BEYOND THE BINARY, and TECH A SEC.'
+      achievements: [
+        { year: 'A.Y. 2025–2026', title: 'With High Honors, Parañaque Science High School' },
+        { year: 'A.Y. 2025–2026', title: 'Outstanding Performance in Communication Arts - English' },
+        { year: 'A.Y. 2025–2026', title: 'Outstanding Performance in Work Immersion' },
+        { year: 'A.Y. 2025–2026', title: '1st Place, Science and Research Impromptu, National Science Quest (NSQ) 2025' },
+        { year: 'A.Y. 2025–2026', title: '3rd Place, Ako Ay Pilipino Speech Competition, Inner Wheel Clubs of the Philippines Inc.' },
+        { year: 'A.Y. 2025–2026', title: '1st Place, Editorial Writing (English), Division Schools Press Conference (DSPC) 2025' },
+        { year: 'A.Y. 2025–2026', title: '1st Place, Editorial Writing (English), School-Based Press Conference 2025' },
+        { year: 'A.Y. 2024–2025', title: '1st Place, Overall Best School Newspaper, The Momentum, DSPC 2025' },
+        { year: 'A.Y. 2024–2025', title: '1st Place, Overall Best Editorial Page, The Momentum, DSPC 2025' },
+        { year: 'A.Y. 2024–2025', title: '2nd Place, Editorial Writing (English), Division Schools Press Conference (DSPC) 2024' },
+        { year: 'A.Y. 2024–2025', title: '1st Place, Editorial Writing (English), School-Based Press Conference 2024' },
+        { year: 'A.Y. 2023–2024', title: 'Batch Valedictorian & With High Honors, San Antonio National High School Parañaque' },
+        { year: 'A.Y. 2023–2024', title: 'Outstanding Performance in Communication Arts & Social Sciences' },
+        { year: 'A.Y. 2023–2024', title: '2nd Place, Editorial Writing (English), Division Schools Press Conference (DSPC) 2023' },
+        { year: 'A.Y. 2023–2024', title: 'Champion, Population Development Quiz, Parañaque City Festival of Talents' },
+        { year: 'A.Y. 2023–2024', title: 'Champion, Oratorical Composition and Presentation, District Festival of Talents' },
+        { year: 'A.Y. 2023–2024', title: 'Champion, Spoken Word Poetry, National Children\'s Month - Division Level' },
+        { year: 'A.Y. 2023–2024', title: 'Champion in School-Based Science Extemporaneous Speech 2024' }
       ]
     },
     masangkay: {
       name: 'Lhei Masangkay',
-      role: 'Daluyan Coalition 2026 • Representative',
-      tag: 'Legislative Agenda Lead',
+      role: 'Daluyan Coalition 2026',
+      tag: 'CATCH2T30 Batch Legislator',
       image: 'candie2.jpeg',
-      paragraphs: [
-        'As your CATCH2T30 Representative, I am committed to turning everyday CCS student needs into clear, enforceable legislative policies that protect student welfare and expand equal academic opportunities.',
-        'From preparatory coding modules and screen-time eye care to alumni mentorship and emergency student relief, every bill in our Legislative Agenda is designed to deliver practical support across our batch.'
+      academicInfo: {
+        collegeProgram: 'Bachelor of Science in Computer Science, Major in Software Technology (BSCS-ST)',
+        highSchool: 'Far Eastern University Diliman Senior High School'
+      },
+      organizations: [
+        {
+          year: 'A.Y. 2025–2026',
+          role: 'Creatives Staff',
+          org: 'FEU-D STEM Organization'
+        },
+        {
+          year: 'A.Y. 2025–2026',
+          role: 'Member',
+          org: 'FEU-D Cheer Team'
+        }
       ],
-      priorities: [
-        'Academic readiness and digital access through Ready, Set, Code and CCS BOOST!.',
-        'Student health and emergency protection via Eye Care for You and CARE.',
-        'Early career exposure and guidance through Shadow Tech alumni mentorship.'
+      achievements: [
+        { year: 'A.Y. 2025–2026', title: 'Academic Excellence - With Honors' },
+        { year: 'A.Y. 2025–2026', title: 'Science Expo: Best Exhibit' },
+        { year: 'A.Y. 2025–2026', title: 'Research Congress: Best Poster' },
+        { year: 'A.Y. 2025–2026', title: 'Deportment Awardee' }
       ]
     }
   };
@@ -172,18 +222,18 @@ document.addEventListener('DOMContentLoaded', () => {
   const modalBackdrop = document.getElementById('modal-backdrop');
   const modalPanel = document.getElementById('modal-panel');
   const modalCandidateImg = document.getElementById('modal-candidate-img');
-  const modalCandidateName = document.getElementById('modal-candidate-name');
   const modalCandidateHeading = document.getElementById('modal-candidate-heading');
   const modalCandidateRole = document.getElementById('modal-candidate-role');
   const modalCandidateTag = document.getElementById('modal-candidate-tag');
-  const modalStatementBody = document.getElementById('modal-statement-body');
-  const modalPrioritiesList = document.getElementById('modal-priorities-list');
+  const modalAcademicInfo = document.getElementById('modal-academic-info');
+  const modalOrgList = document.getElementById('modal-org-list');
+  const modalAchievementsList = document.getElementById('modal-achievements-list');
   const closeModalBtn = document.getElementById('close-modal-btn');
   const modalDoneBtn = document.getElementById('modal-done-btn');
   const modalPlatformsLink = document.getElementById('modal-platforms-link');
 
   function openCandidateModal(candidateKey) {
-    const data = candidateStatements[candidateKey];
+    const data = candidateProfiles[candidateKey];
     if (!data || !modal) return;
 
     modalCandidateImg.src = data.image;
@@ -192,15 +242,40 @@ document.addEventListener('DOMContentLoaded', () => {
     modalCandidateRole.textContent = data.role;
     modalCandidateTag.textContent = data.tag;
 
-    modalStatementBody.innerHTML = data.paragraphs
-      .map(p => `<p>${p}</p>`)
+    // 1. Render Academic Information
+    modalAcademicInfo.innerHTML = `
+      <div class="bg-[#0B0F0F] border border-[#149E92]/35 rounded-xl p-3">
+        <span class="block text-[11px] font-bold uppercase tracking-wider text-[#7AC0BA] mb-1">College Program</span>
+        <span class="text-[#FFFFFF] font-semibold leading-snug block">${data.academicInfo.collegeProgram}</span>
+      </div>
+      <div class="bg-[#0B0F0F] border border-[#149E92]/35 rounded-xl p-3">
+        <span class="block text-[11px] font-bold uppercase tracking-wider text-[#7AC0BA] mb-1">High School</span>
+        <span class="text-[#FFFFFF] font-semibold leading-snug block">${data.academicInfo.highSchool}</span>
+      </div>
+    `;
+
+    // 2. Render Organizational Experiences
+    modalOrgList.innerHTML = data.organizations
+      .map(item => `
+        <li class="flex flex-col sm:flex-row sm:items-center justify-between gap-1 bg-[#0B0F0F] border border-[#149E92]/30 rounded-xl px-3.5 py-2.5">
+          <div>
+            <span class="font-bold text-[#FFFFFF]">${item.role}</span>
+            <span class="text-[#7AC0BA] font-semibold"> • ${item.org}</span>
+          </div>
+          <span class="text-xs font-bold text-[#7AC0BA]/90 shrink-0">${item.year}</span>
+        </li>
+      `)
       .join('');
 
-    modalPrioritiesList.innerHTML = data.priorities
+    // 3. Render Academic Achievements & Recognitions
+    modalAchievementsList.innerHTML = data.achievements
       .map(item => `
         <li class="flex items-start gap-2.5">
           <span class="w-5 h-5 rounded-full bg-[#149E92] text-[#FFFFFF] text-xs font-bold flex items-center justify-center shrink-0 mt-0.5">✓</span>
-          <span>${item}</span>
+          <div class="flex-1">
+            <span class="text-[#FFFFFF] font-medium">${item.title}</span>
+            <span class="ml-1.5 text-xs font-semibold text-[#7AC0BA]">(${item.year})</span>
+          </div>
         </li>
       `)
       .join('');
