@@ -1,0 +1,1103 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Daluyan Coalition 2026</title>
+  
+  <!-- Google Fonts: Hanken Grotesk (HK Grotesk), Orbitron (Adriana), & Oxanium (TT Lakes Neue) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&family=Orbitron:wght@600;700;800;900&family=Oxanium:wght@500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Tailwind Custom Design Tokens -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['HK Grotesk', 'Hanken Grotesk', 'system-ui', '-apple-system', 'sans-serif'],
+            hkgrotesk: ['HK Grotesk', 'Hanken Grotesk', 'sans-serif'],
+            adriana: ['Adriana', 'Orbitron', 'sans-serif'],
+            ttlakes: ['TT Lakes Neue', 'Oxanium', 'sans-serif'],
+          },
+          colors: {
+            civic: {
+              black: '#000000',
+              surface: '#0B0F0F',
+              elevated: '#111717',
+              teal: '#149E92',
+              tealDark: '#0F7A71',
+              hosta: '#7AC0BA',
+              softText: '#D4E4E2',
+            }
+          },
+          boxShadow: {
+            'civic': '0 10px 30px -5px rgba(20, 158, 146, 0.14)',
+            'civic-lg': '0 20px 40px -10px rgba(122, 192, 186, 0.18)',
+          }
+        }
+      }
+    };
+  </script>
+
+  <style>
+    /* Custom subtle geometric pattern for civic hero & accents */
+    .civic-grid-bg {
+      background-image: radial-gradient(rgba(20, 158, 146, 0.28) 1px, transparent 1px);
+      background-size: 24px 24px;
+    }
+
+    /* Smooth modal transition */
+    .modal-backdrop {
+      transition: opacity 0.25s ease;
+    }
+    .modal-panel {
+      transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.25s ease;
+    }
+
+    /* Confetti particle animation for Pledge Vote feedback */
+    @keyframes floatUpFade {
+      0% {
+        opacity: 1;
+        transform: translate(0, 0) scale(1) rotate(0deg);
+      }
+      100% {
+        opacity: 0;
+        transform: translate(var(--tx), var(--ty)) scale(0.6) rotate(var(--rot));
+      }
+    }
+    .pledge-particle {
+      position: fixed;
+      pointer-events: none;
+      z-index: 9999;
+      animation: floatUpFade 0.95s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+    /* Opening entrance animation for bg1.png banner */
+    @keyframes openingBackdropReveal {
+      0% {
+        opacity: 0;
+        transform: scale(1.06);
+        filter: brightness(0.4) blur(6px);
+      }
+      100% {
+        opacity: 1;
+        transform: scale(1);
+        filter: brightness(1) blur(0);
+      }
+    }
+
+    @keyframes openingScrollCueFade {
+      0% {
+        opacity: 0;
+        transform: translateY(14px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .animate-opening-bg {
+      animation: openingBackdropReveal 1.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    .animate-opening-cue {
+      opacity: 0;
+      animation: openingScrollCueFade 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.75s forwards;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .animate-opening-bg,
+      .animate-opening-cue {
+        animation: none;
+        opacity: 1;
+        transform: none;
+        filter: none;
+      }
+    }
+  </style>
+</head>
+
+<body class="bg-[#000000] text-[#FFFFFF] font-sans antialiased selection:bg-[#149E92] selection:text-white">
+
+  <!-- =====================================================================
+       STICKY NAVIGATION BAR (OFFICIAL TEAL #149E92 & BLUE HOSTA #7AC0BA)
+       ===================================================================== -->
+  <header id="navbar" class="sticky top-0 z-40 bg-[#149E92]/95 backdrop-blur-md border-b-2 border-[#7AC0BA] shadow-lg transition-shadow duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        
+        <!-- Brand Logo & Coalition Emblem (TT Lakes Neue) -->
+        <a href="#top" class="flex items-center gap-3 group focus:outline-none focus-visible:ring-2 focus-visible:ring-[#7AC0BA] rounded-xl p-1">
+          <div class="w-10 h-10 rounded-xl bg-[#000000] flex items-center justify-center shadow-md border border-[#7AC0BA] group-hover:scale-105 transition-transform">
+            <!-- Custom Civic Upward Chevron / Torch Emblem -->
+            <svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M12 3L4 9.5L6.2 11.3L12 6.6L17.8 11.3L20 9.5L12 3Z" fill="#7AC0BA"/>
+              <path d="M12 9.5L5.5 14.8L7.7 16.6L12 13.1L16.3 16.6L18.5 14.8L12 9.5Z" fill="#FFFFFF"/>
+              <rect x="10.5" y="16.5" width="3" height="4.5" rx="1.5" fill="#149E92"/>
+            </svg>
+          </div>
+          <div class="font-ttlakes">
+            <span class="block text-[#FFFFFF] font-extrabold tracking-wider text-lg leading-none uppercase">
+              DALUYAN
+            </span>
+            <span class="block text-[#000000] font-extrabold text-[11px] tracking-[0.22em] uppercase mt-1">
+              COALITION
+            </span>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation Links (Canva Adriana Style) -->
+        <nav aria-label="Primary Navigation" class="hidden md:flex items-center gap-1 lg:gap-2">
+          <a href="#about" data-nav-link="about" class="nav-link font-adriana uppercase tracking-wider px-4 py-2.5 rounded-xl text-xs lg:text-sm font-bold text-[#FFFFFF] hover:text-[#000000] hover:bg-[#7AC0BA] transition-colors">
+            About
+          </a>
+          <a href="#candidates" data-nav-link="candidates" class="nav-link font-adriana uppercase tracking-wider px-4 py-2.5 rounded-xl text-xs lg:text-sm font-bold text-[#FFFFFF] hover:text-[#000000] hover:bg-[#7AC0BA] transition-colors">
+            Candidates
+          </a>
+          <a href="#platforms" data-nav-link="platforms" class="nav-link font-adriana uppercase tracking-wider px-4 py-2.5 rounded-xl text-xs lg:text-sm font-bold text-[#FFFFFF] hover:text-[#000000] hover:bg-[#7AC0BA] transition-colors">
+            Platforms
+          </a>
+          <a href="#contacts" data-nav-link="contacts" class="nav-link font-adriana uppercase tracking-wider px-4 py-2.5 rounded-xl text-xs lg:text-sm font-bold text-[#FFFFFF] hover:text-[#000000] hover:bg-[#7AC0BA] transition-colors">
+            Contacts
+          </a>
+        </nav>
+
+        <!-- Desktop Quick Action CTA (Canva Adriana Style) -->
+        <div class="hidden md:flex items-center gap-3">
+          <a href="#contacts" class="font-adriana uppercase tracking-wider inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#000000] hover:bg-[#111717] text-[#7AC0BA] border border-[#7AC0BA] font-bold text-xs lg:text-sm shadow-sm transition-all transform hover:-translate-y-0.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-[#149E92] focus-visible:ring-[#000000]">
+            <span>Check Our Platforms</span>
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+            </svg>
+          </a>
+        </div>
+
+        <!-- Mobile Hamburger Button -->
+        <div class="flex md:hidden">
+          <button
+            id="mobile-menu-btn"
+            type="button"
+            aria-controls="mobile-menu"
+            aria-expanded="false"
+            aria-label="Toggle navigation menu"
+            class="inline-flex items-center justify-center p-3 rounded-xl bg-[#000000]/20 text-[#FFFFFF] hover:text-[#000000] hover:bg-[#7AC0BA] border border-[#7AC0BA]/60 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#000000] transition-colors"
+          >
+            <!-- Hamburger Icon -->
+            <svg id="icon-menu-open" class="w-6 h-6 block" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+            <!-- Close Icon -->
+            <svg id="icon-menu-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Dropdown Menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-[#149E92] border-t border-[#7AC0BA] px-4 pt-3 pb-6 space-y-2 shadow-2xl">
+      <a href="#about" class="mobile-nav-link block px-4 py-3 rounded-xl text-base font-bold text-[#FFFFFF] hover:text-[#000000] hover:bg-[#7AC0BA] transition-colors">
+        About
+      </a>
+      <a href="#candidates" class="mobile-nav-link block px-4 py-3 rounded-xl text-base font-bold text-[#FFFFFF] hover:text-[#000000] hover:bg-[#7AC0BA] transition-colors">
+        Candidates
+      </a>
+      <a href="#platforms" class="mobile-nav-link block px-4 py-3 rounded-xl text-base font-bold text-[#FFFFFF] hover:text-[#000000] hover:bg-[#7AC0BA] transition-colors">
+        Platforms
+      </a>
+      <a href="#contacts" class="mobile-nav-link block px-4 py-3 rounded-xl text-base font-bold text-[#FFFFFF] hover:text-[#000000] hover:bg-[#7AC0BA] transition-colors">
+        Contacts
+      </a>
+      <div class="pt-3 border-t border-[#7AC0BA]/50">
+        <a href="#platforms" class="mobile-nav-link w-full flex items-center justify-center gap-2 px-4 py-3.5 rounded-xl bg-[#000000] text-[#7AC0BA] border border-[#7AC0BA] font-bold text-base shadow-md">
+          <span>Check Our Platforms</span>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main id="top" class="bg-[#000000]">
+    <!-- =====================================================================
+         0. OPENING SPLASH / COVER SECTION (PURE SVG DALUYAN LOGO)
+         ===================================================================== -->
+    <section
+      id="opening-cover"
+      aria-label="Daluyan Coalition Opening Banner"
+      class="relative w-full min-h-[calc(100vh-5rem)] bg-[#1C1C1C] overflow-hidden flex items-center justify-center border-b border-[#149E92]/25 px-4 sm:px-8"
+    >
+      <!-- Subtle Ambient Teal Glow Behind Logo -->
+      <div
+        class="pointer-events-none absolute w-[520px] h-[260px] rounded-full bg-[#149E92]/15 blur-3xl"
+        aria-hidden="true"
+      ></div>
+
+      <!-- Pure Vector SVG Recreation of DALUYAN Logo -->
+      <div class="animate-opening-bg relative z-10 w-full max-w-5xl mx-auto flex items-center justify-center">
+        <svg
+          viewBox="0 0 1200 540"
+          class="w-full h-auto max-h-[calc(100vh-8rem)] drop-shadow-[0_18px_38px_rgba(0,0,0,0.65)] select-none"
+          role="img"
+          aria-label="Daluyan Coalition Official Logo"
+        >
+          <defs>
+            <!-- Base Stencil Letter Fill -->
+            <linearGradient id="daluyanLetterGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" stop-color="#19D3C5" />
+              <stop offset="55%" stop-color="#10B2A6" />
+              <stop offset="100%" stop-color="#0B8F85" />
+            </linearGradient>
+
+            <!-- Luminous Cyan-Teal Ribbon Highlight -->
+            <linearGradient id="ribbonLightGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#0A6660" />
+              <stop offset="22%" stop-color="#22E5D8" />
+              <stop offset="48%" stop-color="#9BFFF8" />
+              <stop offset="76%" stop-color="#15B8AC" />
+              <stop offset="100%" stop-color="#084E4A" />
+            </linearGradient>
+
+            <!-- Deep Shaded Ribbon Fold -->
+            <linearGradient id="ribbonShadowGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#053835" />
+              <stop offset="45%" stop-color="#0E7C74" />
+              <stop offset="80%" stop-color="#1FD4C6" />
+              <stop offset="100%" stop-color="#89FFF6" />
+            </linearGradient>
+
+            <!-- Lower Wave Shimmer -->
+            <linearGradient id="lowerWaveGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#0C7870" />
+              <stop offset="28%" stop-color="#7CFDF4" />
+              <stop offset="52%" stop-color="#16C4B7" />
+              <stop offset="78%" stop-color="#87FFF6" />
+              <stop offset="100%" stop-color="#D2FFFC" />
+            </linearGradient>
+
+            <!-- 4-Point Sparkle Gradient -->
+            <radialGradient id="sparkleGrad" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stop-color="#FFFFFF" />
+              <stop offset="65%" stop-color="#E6F4F3" />
+              <stop offset="100%" stop-color="#9CC8C5" />
+            </radialGradient>
+
+            <!-- Soft Drop Shadow for Overlapping Ribbon Layers -->
+            <filter id="ribbonDepthShadow" x="-10%" y="-10%" width="120%" height="120%">
+              <feDropShadow dx="0" dy="6" stdDeviation="6" flood-color="#000000" flood-opacity="0.45" />
+            </filter>
+          </defs>
+
+          <!-- ===============================================================
+               1. SEGMENTED FUTURISTIC STENCIL LETTERS: "D A L U" & "A N"
+               =============================================================== -->
+          <g fill="url(#daluyanLetterGrad)">
+            <!-- LETTER D -->
+            <rect x="236" y="232" width="14" height="44" rx="2" />
+            <rect x="236" y="286" width="14" height="44" rx="2" />
+            <path d="M 260 232 H 284 C 314 232 332 251 332 281 C 332 311 314 330 284 330 H 260 V 316 H 283 C 304 316 317 302 317 281 C 317 260 304 246 283 246 H 260 Z" />
+
+            <!-- LETTER A (Left) -->
+            <path d="M 382 232 L 348 330 H 364 L 392 246 Z" />
+            <path d="M 396 232 L 430 330 H 414 L 386 246 Z" />
+            <rect x="369" y="286" width="40" height="13" rx="1.5" />
+
+            <!-- LETTER L -->
+            <rect x="444" y="232" width="14" height="98" rx="2" />
+            <rect x="466" y="316" width="48" height="14" rx="2" />
+
+            <!-- LETTER U -->
+            <path d="M 528 232 H 542 V 296 C 542 309 549 316 561 316 V 330 C 540 330 528 318 528 296 Z" />
+            <path d="M 594 232 H 608 V 296 C 608 318 596 330 575 330 V 316 C 587 316 594 309 594 296 Z" />
+
+            <!-- LETTER A (Right) -->
+            <path d="M 808 232 L 774 330 H 790 L 818 246 Z" />
+            <path d="M 822 232 L 856 330 H 840 L 812 246 Z" />
+            <rect x="795" y="286" width="40" height="13" rx="1.5" />
+
+            <!-- LETTER N -->
+            <rect x="870" y="232" width="14" height="44" rx="2" />
+            <rect x="870" y="286" width="14" height="44" rx="2" />
+            <path d="M 892 232 H 907 L 944 302 V 330 H 929 L 892 260 Z" />
+            <rect x="944" y="232" width="14" height="98" rx="2" />
+          </g>
+
+          <!-- ===============================================================
+               2. BACK RIBBON LAYER (UPPER LOOP & Y STEM BEHIND CROSSOVER)
+               =============================================================== -->
+          <g filter="url(#ribbonDepthShadow)">
+            <!-- Upper Left Loop Arching Down Into the Diagonal Y Stem -->
+            <path
+              d="M 564 218
+                 C 564 162, 658 148, 718 196
+                 C 758 228, 742 292, 686 334
+                 C 644 365, 588 378, 534 368
+                 L 548 349
+                 C 596 355, 642 340, 676 310
+                 C 718 273, 726 226, 694 202
+                 C 650 170, 584 182, 584 222
+                 Z"
+              fill="url(#ribbonShadowGrad)"
+            />
+
+            <!-- Right Loop Back Return Swooping Behind "AN" -->
+            <path
+              d="M 964 176
+                 C 1002 204, 984 268, 916 276
+                 C 864 282, 816 264, 766 248
+                 L 776 233
+                 C 822 248, 864 262, 908 256
+                 C 956 249, 970 206, 944 186
+                 Z"
+              fill="url(#ribbonShadowGrad)"
+            />
+          </g>
+
+          <!-- ===============================================================
+               3. FOREGROUND RIBBON LAYER (Y UPPER BOWL & RIGHT INFINITY SWEEP)
+               =============================================================== -->
+          <g filter="url(#ribbonDepthShadow)">
+            <!-- Main Flowing Y Bowl & Diagonal Sweep Up-Right -->
+            <path
+              d="M 564 216
+                 C 564 256, 614 276, 678 248
+                 C 748 218, 842 152, 926 156
+                 C 954 157, 972 167, 980 182
+                 C 962 174, 938 174, 908 182
+                 C 832 202, 748 258, 674 276
+                 C 604 292, 564 262, 564 216
+                 Z"
+              fill="url(#ribbonLightGrad)"
+            />
+          </g>
+
+          <!-- ===============================================================
+               4. LOWER WAVE STREAM (LEFT CREST OVER "DA" & CONTINUOUS WAVE)
+               =============================================================== -->
+          <g filter="url(#ribbonDepthShadow)">
+            <!-- Under-Wave Connecting Left Crest to Right Tail -->
+            <path
+              d="M 272 326
+                 C 320 356, 372 362, 424 348
+                 C 476 334, 524 344, 568 366
+                 C 612 388, 654 378, 698 358
+                 C 748 335, 796 344, 844 364
+                 C 896 385, 948 372, 1002 346
+                 C 1024 336, 1044 334, 1060 338
+                 C 1036 342, 1012 354, 986 368
+                 C 934 394, 882 396, 830 374
+                 C 784 354, 744 352, 700 374
+                 C 652 398, 602 404, 554 380
+                 C 512 358, 468 348, 418 364
+                 C 364 380, 308 372, 260 338
+                 Z"
+              fill="url(#lowerWaveGrad)"
+            />
+
+            <!-- Foreground Left Wave Crest Overlapping Bottom of "D" & "A" -->
+            <path
+              d="M 164 346
+                 C 198 302, 256 292, 314 322
+                 C 344 338, 374 352, 408 354
+                 C 372 368, 332 364, 294 344
+                 C 246 318, 198 320, 164 346
+                 Z"
+              fill="url(#ribbonLightGrad)"
+            />
+          </g>
+
+          <!-- ===============================================================
+               5. FOUR-POINT STAR SPARKLE ABOVE THE Y LOOP
+               =============================================================== -->
+          <path
+            d="M 756 122
+               C 758 139, 761 142, 778 144
+               C 761 146, 758 149, 756 166
+               C 754 149, 751 146, 734 144
+               C 751 142, 754 139, 756 122
+               Z"
+            fill="url(#sparkleGrad)"
+          />
+        </svg>
+      </div>
+
+      <!-- Subtle Bottom Fade into Pure Black Next Section -->
+      <div
+        class="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[#000000] to-transparent"
+        aria-hidden="true"
+      ></div>
+
+      <!-- Delayed Scroll Indicator -->
+      <a
+        href="#hero"
+        aria-label="Scroll to Daluyan Coalition Hero Section"
+        class="animate-opening-cue absolute bottom-6 left-1/2 -translate-x-1/2 inline-flex flex-col items-center gap-1.5 text-xs font-adriana uppercase tracking-[0.22em] text-[#7AC0BA] hover:text-[#FFFFFF] transition-colors"
+      >
+        <span>Scroll</span>
+        <svg class="w-5 h-5 animate-bounce" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+        </svg>
+      </a>
+    </section>
+
+    <!-- =====================================================================
+         1. HERO SECTION (#000000 PURE BLACK BACKGROUND)
+         ===================================================================== -->
+    <section class="relative overflow-hidden bg-[#000000] text-[#FFFFFF] pt-16 pb-24 sm:pt-24 sm:pb-32 lg:pt-28 lg:pb-36 font-ttlakes">
+      <!-- Decorative Background Grid & Radial Glows -->
+      <div class="absolute inset-0 civic-grid-bg opacity-55 pointer-events-none" aria-hidden="true"></div>
+      <div class="absolute -top-24 -right-24 w-96 h-96 rounded-full bg-[#149E92]/20 blur-3xl pointer-events-none" aria-hidden="true"></div>
+      <div class="absolute -bottom-24 -left-24 w-80 h-80 rounded-full bg-[#7AC0BA]/15 blur-3xl pointer-events-none" aria-hidden="true"></div>
+
+      <div class="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div class="flex flex-col items-center space-y-7">
+
+          <!-- Main Campaign Headline (TT Lakes Neue Style) -->
+          <h1 class="font-ttlakes text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-black tracking-wider uppercase leading-[0.98] text-[#09B8C8]">
+            DALUYAN <br />
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#149E92] via-[#65FFFF] to-[#DFF5ED]">
+              COALITION
+            </span>
+          </h1>
+
+          <!-- Campaign Subheadline (TT Lakes Neue Style) -->
+          <p class="font-ttlakes text-lg sm:text-xl lg:text-2xl text-[#D4E4E2] tracking-wide leading-relaxed max-w-2xl mx-auto">
+            For a dynamic <strong class="text-[#] font-bold">CATCH2T30</strong> that <strong class="text-[#FFFFFF] font-bold">redefines technology as a driving force for change</strong>
+          </p>
+
+          <!-- Primary CTA Buttons -->
+          <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-3 w-full sm:w-auto">
+            <a href="#platforms" class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-7 py-4 rounded-2xl bg-[#149E92] hover:bg-[#0F7A71] text-[#FFFFFF] border border-[#7AC0BA]/50 font-bold tracking-wide text-base shadow-lg shadow-[#149E92]/25 transition-all transform hover:-translate-y-0.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-[#000000] focus-visible:ring-[#7AC0BA]">
+              <span>Explore Platforms</span>
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 13.5L12 21m0 0l-7.5-7.5M12 21V3" />
+              </svg>
+            </a>
+            <a href="#candidates" class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-7 py-4 rounded-2xl bg-[#0B0F0F] hover:bg-[#111717] text-[#7AC0BA] border-2 border-[#7AC0BA] font-bold tracking-wide text-base transition-all transform hover:-translate-y-0.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-[#000000] focus-visible:ring-[#7AC0BA]">
+              <span>Meet the Candidates</span>
+              <svg class="w-5 h-5 text-[#7AC0BA]" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z" />
+              </svg>
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         SLOGAN BANNER SECTION (SPLIT-CORNER WITH GUECO & MASANGKAY)
+         ===================================================================== -->
+    <section aria-label="Campaign Slogan" class="relative overflow-hidden border-t border-b border-[#149E92]/25 pt-44 pb-16 sm:pt-56 sm:pb-12 min-h-[580px] sm:min-h-[820px] lg:min-h-[720px] flex items-end bg-[#000000]">
+      
+      <!-- Full-Bleed Background Photo -->
+      <img
+        src="slogan.png"
+        alt="Daluyan Coalition Candidates"
+        class="absolute inset-0 w-full h-full object-cover object-[center_55%]"
+        style="filter: contrast(1.06) saturate(1.12);"
+      />
+
+      <!-- Janret-Style Soft Bottom-Up Gradient -->
+      <div
+        class="absolute inset-0 bg-gradient-to-t from-[#091E1C]/85 via-[#0F3D39]/35 to-transparent"
+        aria-hidden="true"
+      ></div>
+
+      <!-- Bottom Split-Corner Content Container -->
+      <div class="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-64 sm:pt-80 flex flex-col lg:flex-row lg:items-end justify-between gap-8">
+        
+        <!-- Bottom-Left: Enlarged Adriana Slogan -->
+        <div class="text-left max-w-2xl">
+          <h2 class="font-adriana uppercase font-black tracking-wider text-3xl sm:text-4xl lg:text-5xl xl:text-[65px] leading-[1.05] text-[#FFFFFF] drop-shadow-[0_6px_24px_rgba(0,0,0,0.95)]">
+            HINDI LANG <span class="text-[#2ED8C3]">AGOS,</span><br />
+            TAYO ANG <span class="text-[#2ED8C3]">DALOY.</span>
+          </h2>
+        </div>
+
+        <!-- Bottom-Right: Daluyan Coalition, Gueco & Masangkay, & CATCH2T30 Lockup -->
+        <div class="text-left lg:text-right shrink-0">
+          <p class="font-ttlakes uppercase tracking-[0.22em] text-xs sm:text-sm font-extrabold text-[#FFFFFF]/90 mb-1 drop-shadow">
+            DALUYAN COALITION 2026
+          </p>
+          <p class="font-adriana uppercase font-black tracking-wider text-2xl sm:text-3xl lg:text-4xl xl:text-[42px] leading-none text-[#FFFFFF] drop-shadow-[0_6px_24px_rgba(0,0,0,0.95)]">
+            GUECO <span class="text-[#2ED8C3]">& MASANGKAY</span>
+          </p>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- =====================================================================
+         2. ABOUT SECTION (#about)
+         ===================================================================== -->
+    <section id="about" class="scroll-mt-20 py-20 sm:py-28 bg-[#000000] border-t border-[#149E92]/25">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Section Header -->
+        <div class="max-w-3xl mx-auto text-center mb-14">
+          <h2 class="font-adriana uppercase tracking-wider text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#FFFFFF]">
+            OUR MISSION<span class="text-[#09B8C8]"> AND VISION</span>
+          </h2>
+        </div>
+
+        <!-- Core Pillars Grid (Centered 2-Column Layout) -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto font-hkgrotesk">
+          
+          <!-- Pillar 1: Radical Transparency (Book Icon) -->
+          <article class="bg-[#0B0F0F] hover:bg-[#111717] rounded-3xl p-8 border border-[#149E92]/45 hover:border-[#7AC0BA] shadow-civic hover:shadow-civic-lg transition-all duration-300 flex flex-col justify-between items-center text-center group">
+            <div class="w-full flex flex-col items-center">
+              <div class="font-hkgrotesk inline-block text-xs font-bold uppercase tracking-wider text-[#7AC0BA] mb-3">
+                Pillar 01
+              </div>
+
+              <!-- Icon & H3 Beside Each Other -->
+              <div class="flex items-center justify-center gap-3.5 mb-4">
+                <div class="w-12 h-12 shrink-0 rounded-2xl bg-[#149E92]/20 border border-[#7AC0BA]/40 flex items-center justify-center text-[#7AC0BA] group-hover:bg-[#149E92] group-hover:text-[#FFFFFF] transition-colors">
+                  <!-- Book Icon (Swapped) -->
+                  <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
+                  </svg>
+                </div>
+                <h3 class="font-ttlakes text-xl sm:text-2xl font-bold tracking-wide text-[#FFFFFF] text-left">
+                  Batch Mission
+                </h3>
+              </div>
+
+              <p class="font-hkgrotesk text-[#D4E4E2] leading-relaxed text-sm sm:text-base">
+                DALUYAN seeks to serve as the bridge for every ID126 CCS student to the information, opportunities, and representation they need; where concerns are carried beyond conversation and towards concrete action. We aim for a college where students know where to go, who to turn to, and where voices are met with action, not neglect.
+              </p>
+            </div>
+          </article>
+
+          <!-- Pillar 2: Student-First Resources (Eye Icon) -->
+          <article class="bg-[#0B0F0F] hover:bg-[#111717] rounded-3xl p-8 border border-[#149E92]/45 hover:border-[#7AC0BA] shadow-civic hover:shadow-civic-lg transition-all duration-300 flex flex-col justify-between items-center text-center group">
+            <div class="w-full flex flex-col items-center">
+              <div class="font-hkgrotesk inline-block text-xs font-bold uppercase tracking-wider text-[#7AC0BA] mb-3">
+                Pillar 02
+              </div>
+
+              <!-- Icon & H3 Beside Each Other -->
+              <div class="flex items-center justify-center gap-3.5 mb-4">
+                <div class="w-12 h-12 shrink-0 rounded-2xl bg-[#149E92]/20 border border-[#7AC0BA]/40 flex items-center justify-center text-[#7AC0BA] group-hover:bg-[#149E92] group-hover:text-[#FFFFFF] transition-colors">
+                  <!-- Eye Icon (Swapped) -->
+                  <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z" />
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                  </svg>
+                </div>
+                <h3 class="font-ttlakes text-xl sm:text-2xl font-bold tracking-wide text-[#FFFFFF] text-left">
+                  Batch Vision
+                </h3>
+              </div>
+
+              <p class="font-hkgrotesk text-[#D4E4E2] leading-relaxed text-sm sm:text-base">
+                We envision a batch where no student is left out of the current.
+                A community where information moves with freedom, opportunities are within reach, and student concerns are not kept in a vacuum. Where every student has a place, a voice that carries, and a hand in shaping what comes next. CCS should not be something students simply learn to navigate alone. It should be a community that is accessible, responsive, and built for its students.
+              </p>
+            </div>
+          </article>
+          
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         3. CANDIDATES SECTION (#candidates)
+         ===================================================================== -->
+    <section id="candidates" class="scroll-mt-20 py-20 sm:py-28 bg-[#000000] border-t border-[#149E92]/25">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Section Header -->
+        <div class="max-w-3xl mx-auto text-center mb-16">
+          <span class="inline-block px-3.5 py-1.5 rounded-full bg-[#149E92]/20 text-[#7AC0BA] border border-[#7AC0BA]/30 font-bold text-xs uppercase tracking-widest mb-4">
+            The Executive Ticket
+          </span>
+          <h2 class="font-adriana uppercase tracking-wider text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#FFFFFF]">
+            MEET THE <span class="text-[#7AC0BA]">CANDIDATES</span>
+          </h2>
+          <p class="font-hkgrotesk mt-5 text-lg text-[#D4E4E2] leading-relaxed">
+            Click on a candidate card below to view their leadership background, vision, and commitment to CATCH2T30.
+          </p>
+        </div>
+
+        <!-- Two Framed Candidate Cards (Portrait Slot + Bottom Black Pill) -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-12 max-w-4xl mx-auto pt-2 pb-6">
+
+          <!-- CANDIDATE CARD 1: DOM GUECO -->
+          <button
+            type="button"
+            data-candidate="gueco"
+            aria-label="View Dom Gueco's Profile"
+            class="open-statement-btn group relative flex flex-col items-center text-center focus:outline-none focus-visible:ring-2 focus-visible:ring-[#7AC0BA] rounded-[2rem] cursor-pointer transition-transform duration-300 hover:-translate-y-1.5"
+          >
+            <!-- Outer Framed Card -->
+            <div class="w-full rounded-[2rem] bg-[#162323] group-hover:bg-[#1C2D2D] border-2 border-[#7AC0BA]/40 group-hover:border-[#7AC0BA] p-5 sm:p-6 pb-12 sm:pb-14 shadow-civic group-hover:shadow-civic-lg transition-all duration-300">
+              <!-- Dark Green Portrait Slot -->
+              <div class="relative w-full aspect-[3/4] rounded-2xl bg-[#043935] border border-[#149E92]/60 overflow-hidden shadow-inner">
+                <img
+                  src="candie1.jpeg"
+                  alt="Dom Gueco"
+                  class="w-full h-full object-cover object-[50%_150%] group-hover:scale-105 transition-transform duration-500"
+                />
+                <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#043935]/55 via-transparent to-transparent" aria-hidden="true"></div>
+                
+                <!-- Subtle Hover Action Pill -->
+                <span class="absolute top-3 right-3 px-3 py-1 rounded-full bg-[#000000]/80 text-[#7AC0BA] border border-[#7AC0BA]/40 font-adriana text-[11px] font-bold uppercase tracking-wider opacity-90 group-hover:bg-[#149E92] group-hover:text-[#FFFFFF] transition-colors">
+                  View Profile
+                </span>
+              </div>
+            </div>
+
+            <!-- Overlapping Bottom Black Pill -->
+            <div class="relative z-10 -mt-9 w-[92%] rounded-2xl bg-[#000000] border-2 border-[#149E92]/75 group-hover:border-[#7AC0BA] px-5 py-4 shadow-2xl transition-colors">
+              <h3 class="font-ttlakes text-2xl sm:text-3xl font-extrabold tracking-wide text-[#FFFFFF] leading-tight">
+                Dom Gueco
+              </h3>
+              <p class="font-hkgrotesk text-xs sm:text-sm font-semibold tracking-wide text-[#7AC0BA] mt-1">
+                Your CATCH2T30 Representative
+              </p>
+            </div>
+          </button>
+
+          <!-- CANDIDATE CARD 2: LHEI MASANGKAY -->
+          <button
+            type="button"
+            data-candidate="masangkay"
+            aria-label="View Lhei Masangkay's Profile"
+            class="open-statement-btn group relative flex flex-col items-center text-center focus:outline-none focus-visible:ring-2 focus-visible:ring-[#7AC0BA] rounded-[2rem] cursor-pointer transition-transform duration-300 hover:-translate-y-1.5"
+          >
+            <!-- Outer Framed Card -->
+            <div class="w-full rounded-[2rem] bg-[#162323] group-hover:bg-[#1C2D2D] border-2 border-[#7AC0BA]/40 group-hover:border-[#7AC0BA] p-5 sm:p-6 pb-12 sm:pb-14 shadow-civic group-hover:shadow-civic-lg transition-all duration-300">
+              <!-- Dark Green Portrait Slot -->
+              <div class="relative w-full aspect-[3/4] rounded-2xl bg-[#043935] border border-[#149E92]/60 overflow-hidden shadow-inner">
+                <img
+                  src="candie2.jpeg"
+                  alt="Lhei Masangkay"
+                  class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                />
+                <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#043935]/55 via-transparent to-transparent" aria-hidden="true"></div>
+
+                <!-- Subtle Hover Action Pill -->
+                <span class="absolute top-3 right-3 px-3 py-1 rounded-full bg-[#000000]/80 text-[#7AC0BA] border border-[#7AC0BA]/40 font-adriana text-[11px] font-bold uppercase tracking-wider opacity-90 group-hover:bg-[#149E92] group-hover:text-[#FFFFFF] transition-colors">
+                  Tap for Details
+                </span>
+              </div>
+            </div>
+
+            <!-- Overlapping Bottom Black Pill -->
+            <div class="relative z-10 -mt-9 w-[92%] rounded-2xl bg-[#000000] border-2 border-[#149E92]/75 group-hover:border-[#7AC0BA] px-5 py-4 shadow-2xl transition-colors">
+              <h3 class="font-ttlakes text-2xl sm:text-3xl font-extrabold tracking-wide text-[#FFFFFF] leading-tight">
+                Lhei Masangkay
+              </h3>
+              <p class="font-hkgrotesk text-xs sm:text-sm font-semibold tracking-wide text-[#7AC0BA] mt-1">
+                Your CATCH2T30 Batch Legislator
+              </p>
+            </div>
+          </button>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         4. PLATFORMS SECTION (#platforms)
+         ===================================================================== -->
+    <section id="platforms" class="scroll-mt-20 py-20 sm:py-28 bg-[#000000] border-t border-[#149E92]/25">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+      <!-- Section Header -->
+        <div class="max-w-5xl mx-auto text-center mb-12">
+          <h2 class="font-adriana uppercase tracking-wider text-2xl sm:text-3xl lg:text-4xl xl:text-5xl sm:whitespace-nowrap font-extrabold text-[#FFFFFF]">
+            PLATFORMS AND <span class="text-[#7AC0BA]">LA AGENDA</span>
+          </h2>
+          <p class="font-hkgrotesk max-w-3xl mx-auto mt-5 text-lg text-[#D4E4E2] leading-relaxed">
+            Explore our batch-wide platforms and legislative bills designed to make information, opportunities, and responsive representation accessible to every ID126 CCS student.
+          </p>
+        </div>
+
+        <!-- Interactive Candidate Surname Filter Tabs -->
+        <div role="tablist" aria-label="Candidate Platform Filter" class="flex flex-wrap items-center justify-center gap-3 sm:gap-4 mb-12">
+          <button
+            type="button"
+            role="tab"
+            aria-selected="true"
+            data-category="gueco"
+            class="platform-tab font-adriana uppercase tracking-wider px-7 py-3.5 rounded-2xl text-sm font-bold transition-all cursor-pointer bg-[#149E92] text-[#FFFFFF] border border-[#7AC0BA] shadow-md"
+          >
+            GUECO'S PLATFORMS
+          </button>
+          <button
+            type="button"
+            role="tab"
+            aria-selected="false"
+            data-category="masangkay"
+            class="platform-tab font-adriana uppercase tracking-wider px-7 py-3.5 rounded-2xl text-sm font-bold transition-all cursor-pointer bg-[#0B0F0F] text-[#D4E4E2] hover:bg-[#111717] hover:text-[#7AC0BA] hover:border-[#7AC0BA]/60 border border-[#149E92]/45"
+          >
+            MASANGKAY'S LA AGENDA
+          </button>
+        </div>
+
+        <!-- Platform Proposals Dynamic Grid -->
+        <div id="platform-cards-grid" class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+          <!-- Populated cleanly via JavaScript for instant filtering -->
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         5. CONTACTS SECTION (#contacts) (SIDE-BY-SIDE HORIZONTAL CARDS)
+         ===================================================================== -->
+    <section id="contacts" class="scroll-mt-20 py-20 sm:py-28 bg-[#000000] border-t border-[#149E92]/25">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Section Header -->
+        <div class="max-w-3xl mx-auto text-center mb-16">
+          <span class="inline-block px-3.5 py-1.5 rounded-full bg-[#149E92]/20 text-[#7AC0BA] border border-[#7AC0BA]/30 font-bold text-xs uppercase tracking-widest mb-4">
+            Get In Touch
+          </span>
+          <h2 class="font-adriana uppercase tracking-wider text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#FFFFFF]">
+            CONTACT <span class="text-[#7AC0BA]">US</span>
+          </h2>
+          <p class="font-hkgrotesk mt-5 text-lg text-[#D4E4E2] leading-relaxed">
+            Have questions about our platforms, legislative agenda, or batch initiatives? Reach out directly to Dom and Lhei through any of their channels below.
+          </p>
+        </div>
+
+        <!-- Side-by-Side Grid of Horizontal Contact Cards -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 xl:gap-8">
+
+          <!-- CONTACT CARD 1: DOM GUECO -->
+          <article class="bg-[#0B0F0F] hover:bg-[#111717] rounded-3xl border border-[#149E92]/50 hover:border-[#7AC0BA] overflow-hidden shadow-civic hover:shadow-civic-lg transition-all duration-300 flex flex-col sm:flex-row items-center sm:items-stretch p-4 sm:p-5 xl:p-6 gap-5 xl:gap-6 group">
+            
+            <!-- Left Side: Full Portrait Container -->
+            <div class="relative w-full max-w-[220px] sm:max-w-none sm:w-44 xl:w-52 h-72 sm:h-auto min-h-[260px] rounded-2xl bg-gradient-to-b from-[#149E92]/25 to-[#000000] overflow-hidden border border-[#149E92]/35 shrink-0">
+              <img
+                src="contact1.jpg"
+                alt="Dom Gueco"
+                class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+              />
+              <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#0B0F0F]/45 to-transparent" aria-hidden="true"></div>
+            </div>
+
+            <!-- Right Side: Details & Social Links -->
+            <div class="flex-1 min-w-0 flex flex-col justify-between text-center sm:text-left py-1">
+              <div>
+                <div class="flex flex-wrap items-center justify-center sm:justify-start gap-2 mb-2.5">
+                  <span class="inline-block px-2.5 py-1 rounded-full bg-[#149E92]/25 text-[#7AC0BA] border border-[#7AC0BA]/35 text-[11px] font-bold uppercase tracking-wider">
+                    Daluyan Coalition
+                  </span>
+                  <span class="inline-block px-2.5 py-1 rounded-full bg-[#7AC0BA]/15 text-[#7AC0BA] border border-[#7AC0BA]/30 text-[11px] font-bold uppercase tracking-wider">
+                    Representative
+                  </span>
+                </div>
+                
+                <h3 class="font-ttlakes text-2xl xl:text-3xl font-extrabold tracking-wide text-[#FFFFFF] mb-2">
+                  Dom Gueco
+                </h3>
+                <p class="font-hkgrotesk text-xs sm:text-sm text-[#D4E4E2] leading-relaxed mb-5">
+                  Reach out for inquiries on platform mechanics, student initiatives, or general feedback.
+                </p>
+              </div>
+
+              <!-- Social Links (Facebook, Instagram, Telegram) -->
+              <div>
+                <p class="font-hkgrotesk text-[11px] font-bold uppercase tracking-wider text-[#7AC0BA] mb-2.5">
+                  Social Media & Networks
+                </p>
+                <div class="grid grid-cols-3 gap-2">
+                  <!-- Facebook -->
+                  <a
+                    href="https://www.facebook.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Dom Gueco on Facebook"
+                    class="flex flex-col items-center justify-center gap-1 py-2.5 px-2 rounded-xl bg-[#111717] hover:bg-[#149E92] text-[#D4E4E2] hover:text-[#FFFFFF] border border-[#149E92]/40 hover:border-[#7AC0BA] transition-all font-bold text-xs"
+                  >
+                    <svg class="w-4 h-4 shrink-0" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" />
+                    </svg>
+                    <span>Facebook</span>
+                  </a>
+
+                  <!-- Instagram -->
+                  <a
+                    href="https://www.instagram.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Dom Gueco on Instagram"
+                    class="flex flex-col items-center justify-center gap-1 py-2.5 px-2 rounded-xl bg-[#111717] hover:bg-[#149E92] text-[#D4E4E2] hover:text-[#FFFFFF] border border-[#149E92]/40 hover:border-[#7AC0BA] transition-all font-bold text-xs"
+                  >
+                    <svg class="w-4 h-4 shrink-0" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                    </svg>
+                    <span>Instagram</span>
+                  </a>
+
+                  <!-- Telegram -->
+                  <a
+                    href="https://t.me/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Dom Gueco on Telegram"
+                    class="flex flex-col items-center justify-center gap-1 py-2.5 px-2 rounded-xl bg-[#111717] hover:bg-[#149E92] text-[#D4E4E2] hover:text-[#FFFFFF] border border-[#149E92]/40 hover:border-[#7AC0BA] transition-all font-bold text-xs"
+                  >
+                    <svg class="w-4 h-4 shrink-0" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z" />
+                    </svg>
+                    <span>Telegram</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- CONTACT CARD 2: LHEI MASANGKAY -->
+          <article class="bg-[#0B0F0F] hover:bg-[#111717] rounded-3xl border border-[#149E92]/50 hover:border-[#7AC0BA] overflow-hidden shadow-civic hover:shadow-civic-lg transition-all duration-300 flex flex-col sm:flex-row items-center sm:items-stretch p-4 sm:p-5 xl:p-6 gap-5 xl:gap-6 group">
+            
+            <!-- Left Side: Full Portrait Container -->
+            <div class="relative w-full max-w-[220px] sm:max-w-none sm:w-44 xl:w-52 h-72 sm:h-auto min-h-[260px] rounded-2xl bg-gradient-to-b from-[#149E92]/30 via-[#0F2422] to-[#0B0F0F] overflow-hidden border border-[#149E92]/35 shrink-0">
+              <img
+                src="contact2.jpg"
+                alt="Lhei Masangkay"
+                class="w-full h-full object-contain object-bottom pt-3 group-hover:scale-105 transition-transform duration-500"
+              />
+              <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#0B0F0F]/45 to-transparent" aria-hidden="true"></div>
+            </div>
+
+            <!-- Right Side: Details & Social Links -->
+            <div class="flex-1 min-w-0 flex flex-col justify-between text-center sm:text-left py-1">
+              <div>
+                <div class="flex flex-wrap items-center justify-center sm:justify-start gap-2 mb-2.5">
+                  <span class="inline-block px-2.5 py-1 rounded-full bg-[#149E92]/25 text-[#7AC0BA] border border-[#7AC0BA]/35 text-[11px] font-bold uppercase tracking-wider">
+                    Daluyan Coalition
+                  </span>
+                  <span class="inline-block px-2.5 py-1 rounded-full bg-[#7AC0BA]/15 text-[#7AC0BA] border border-[#7AC0BA]/30 text-[11px] font-bold uppercase tracking-wider">
+                    Batch Co-Chair
+                  </span>
+                </div>
+                
+                <h3 class="font-ttlakes text-2xl xl:text-3xl font-extrabold tracking-wide text-[#FFFFFF] mb-2">
+                  Lhei Masangkay
+                </h3>
+                <p class="font-hkgrotesk text-xs sm:text-sm text-[#D4E4E2] leading-relaxed mb-5">
+                  Message Lhei for updates on Legislative Agenda implementation, policy drafting, or proposed bills.
+                </p>
+              </div>
+
+              <!-- Social Links (Facebook, Instagram, Telegram) -->
+              <div>
+                <p class="font-hkgrotesk text-[11px] font-bold uppercase tracking-wider text-[#7AC0BA] mb-2.5">
+                  Socials & Updates
+                </p>
+                <div class="grid grid-cols-3 gap-2">
+                  <!-- Facebook -->
+                  <a
+                    href="https://www.facebook.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Lhei Masangkay on Facebook"
+                    class="flex flex-col items-center justify-center gap-1 py-2.5 px-2 rounded-xl bg-[#111717] hover:bg-[#149E92] text-[#D4E4E2] hover:text-[#FFFFFF] border border-[#149E92]/40 hover:border-[#7AC0BA] transition-all font-bold text-xs"
+                  >
+                    <svg class="w-4 h-4 shrink-0" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" />
+                    </svg>
+                    <span>Facebook</span>
+                  </a>
+
+                  <!-- Instagram -->
+                  <a
+                    href="https://www.instagram.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Lhei Masangkay on Instagram"
+                    class="flex flex-col items-center justify-center gap-1 py-2.5 px-2 rounded-xl bg-[#111717] hover:bg-[#149E92] text-[#D4E4E2] hover:text-[#FFFFFF] border border-[#149E92]/40 hover:border-[#7AC0BA] transition-all font-bold text-xs"
+                  >
+                    <svg class="w-4 h-4 shrink-0" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                    </svg>
+                    <span>Instagram</span>
+                  </a>
+
+                  <!-- Telegram -->
+                  <a
+                    href="https://t.me/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Lhei Masangkay on Telegram"
+                    class="flex flex-col items-center justify-center gap-1 py-2.5 px-2 rounded-xl bg-[#111717] hover:bg-[#149E92] text-[#D4E4E2] hover:text-[#FFFFFF] border border-[#149E92]/40 hover:border-[#7AC0BA] transition-all font-bold text-xs"
+                  >
+                    <svg class="w-4 h-4 shrink-0" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z" />
+                    </svg>
+                    <span>Telegram</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- =====================================================================
+       FOOTER (#000000 PURE BLACK)
+       ===================================================================== -->
+  <footer class="bg-[#000000] text-[#D4E4E2] border-t border-[#149E92]/40">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-8 pb-8 border-b border-[#149E92]/25">
+        <div class="flex items-center gap-3">
+          <div class="w-9 h-9 rounded-xl bg-[#149E92] border border-[#7AC0BA] flex items-center justify-center">
+            <svg class="w-5 h-5 text-white" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M12 3L4 9.5L6.2 11.3L12 6.6L17.8 11.3L20 9.5L12 3Z" fill="#7AC0BA"/>
+              <path d="M12 9.5L5.5 14.8L7.7 16.6L12 13.1L16.3 16.6L18.5 14.8L12 9.5Z" fill="#FFFFFF"/>
+            </svg>
+          </div>
+          <div>
+            <span class="block text-[#FFFFFF] font-extrabold tracking-tight text-base">ELEVATE STUDENT COALITION</span>
+            <span class="block text-xs text-[#7AC0BA]">Your Voice. Our Campus. Real Action.</span>
+          </div>
+        </div>
+
+        <nav aria-label="Footer Navigation" class="flex flex-wrap gap-6 text-sm font-semibold">
+          <a href="#about" class="hover:text-[#7AC0BA] transition-colors">About</a>
+          <a href="#candidates" class="hover:text-[#7AC0BA] transition-colors">Candidates</a>
+          <a href="#platforms" class="hover:text-[#7AC0BA] transition-colors">Platforms</a>
+          <a href="#contacts" class="hover:text-[#7AC0BA] transition-colors">Contacts</a>
+        </nav>
+      </div>
+
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#D4E4E2]/75">
+        <p>Paid for by the Elevate Student Coalition • Approved by Elena Rostova & Marcus Vance.</p>
+        <p class="font-semibold text-[#7AC0BA]">Vote Nov 18–20 on the Campus Student Portal</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- =====================================================================
+       CANDIDATE PROFILE HORIZONTAL CARD MODAL (DOM GUECO & LHEI MASANGKAY)
+       ===================================================================== -->
+  <div
+    id="statement-modal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="modal-candidate-heading"
+    class="fixed inset-0 z-50 hidden items-center justify-center p-4 sm:p-6"
+  >
+    <!-- Backdrop -->
+    <div id="modal-backdrop" class="modal-backdrop fixed inset-0 bg-[#000000]/85 backdrop-blur-sm opacity-0"></div>
+
+    <!-- Horizontal Contact-Card Style Modal Box -->
+    <div id="modal-panel" class="modal-panel relative z-10 w-full max-w-4xl bg-[#0B0F0F] rounded-3xl shadow-2xl border border-[#7AC0BA]/60 overflow-hidden opacity-0 scale-95 max-h-[90vh] flex flex-col">
+      
+      <!-- Top Bar -->
+      <div class="px-6 py-4 bg-[#111717] border-b border-[#149E92]/40 flex items-center justify-between gap-4 shrink-0">
+        <span id="modal-candidate-role" class="inline-block px-3 py-1 rounded-full bg-[#149E92]/25 text-[#7AC0BA] border border-[#7AC0BA]/35 font-adriana text-xs font-bold uppercase tracking-wider">
+          Daluyan Coalition 2026
+        </span>
+        <button
+          id="close-modal-btn"
+          type="button"
+          aria-label="Close candidate profile modal"
+          class="p-2 rounded-xl bg-[#000000] hover:bg-[#149E92] text-[#D4E4E2] hover:text-[#FFFFFF] border border-[#149E92]/50 transition-colors cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#7AC0BA]"
+        >
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+
+      <!-- Horizontal Body: Left Full Portrait + Right Candidate Details -->
+      <div class="p-6 sm:p-8 overflow-y-auto flex-1">
+        <div class="flex flex-col md:flex-row items-center md:items-stretch gap-6 md:gap-8">
+          
+          <!-- Left Side: Full Portrait Card (No Bottom Pill) -->
+          <div class="w-full max-w-[260px] md:w-64 shrink-0">
+            <div class="w-full h-full rounded-3xl bg-[#162323] border border-[#7AC0BA]/40 p-3.5 shadow-civic">
+              <div class="w-full h-full aspect-[3/4] rounded-2xl bg-[#043935] border border-[#149E92]/60 overflow-hidden">
+                <img
+                  id="modal-candidate-img"
+                  src="candie1.jpeg"
+                  alt="Candidate Portrait"
+                  class="w-full h-full object-cover object-top"
+                />
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Side: Bio, Leadership Statement & Key Commitments -->
+          <div class="flex-1 min-w-0 text-left flex flex-col justify-between space-y-5 text-[#D4E4E2]">
+            <div class="space-y-4">
+              <div>
+                <div class="flex flex-wrap items-center gap-2 mb-2.5">
+                  <span class="inline-block px-2.5 py-1 rounded-full bg-[#149E92]/25 text-[#7AC0BA] border border-[#7AC0BA]/35 text-[11px] font-bold uppercase tracking-wider">
+                    Daluyan Coalition 2026
+                  </span>
+                  <span id="modal-candidate-tag" class="inline-block px-2.5 py-1 rounded-full bg-[#7AC0BA]/15 text-[#7AC0BA] border border-[#7AC0BA]/30 text-[11px] font-bold uppercase tracking-wider">
+                    CATCH2T30 Representative
+                  </span>
+                </div>
+                <h3 id="modal-candidate-heading" class="font-ttlakes text-2xl sm:text-3xl font-extrabold tracking-wide text-[#FFFFFF]">
+                  Dom Gueco
+                </h3>
+              </div>
+
+              <div id="modal-statement-body" class="font-hkgrotesk space-y-3.5 text-sm sm:text-base leading-relaxed">
+                <!-- Injected dynamically via JS -->
+              </div>
+            </div>
+
+            <div class="bg-[#111717] border border-[#149E92]/50 rounded-2xl p-4 sm:p-5">
+              <h4 class="font-adriana text-xs font-bold uppercase tracking-wider text-[#7AC0BA] mb-3">
+                Key Focus Areas
+              </h4>
+              <ul id="modal-priorities-list" class="font-hkgrotesk space-y-2 text-sm font-medium text-[#FFFFFF]">
+                <!-- Injected dynamically via JS -->
+              </ul>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Modal Footer -->
+      <div class="px-6 py-4 sm:px-8 bg-[#111717] border-t border-[#149E92]/40 flex flex-col sm:flex-row items-center justify-between gap-3 shrink-0">
+        <span class="text-xs font-semibold text-[#7AC0BA]">Daluyan Coalition 2026 • CATCH2T30</span>
+        <div class="flex items-center gap-3 w-full sm:w-auto">
+          <a
+            href="#platforms"
+            id="modal-platforms-link"
+            class="flex-1 sm:flex-initial text-center px-5 py-2.5 rounded-xl bg-[#149E92] hover:bg-[#7AC0BA] text-[#FFFFFF] hover:text-[#000000] font-bold text-sm transition-colors"
+          >
+            View Platforms
+          </a>
+          <button
+            id="modal-done-btn"
+            type="button"
+            class="flex-1 sm:flex-initial px-5 py-2.5 rounded-xl bg-[#000000] hover:bg-[#0B0F0F] text-[#D4E4E2] border border-[#149E92]/50 font-bold text-sm transition-colors cursor-pointer"
+          >
+            Close
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- External Application Script -->
+  <script src="script.js"></script>
+</body>
+</html>
