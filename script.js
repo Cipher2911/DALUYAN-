@@ -188,6 +188,9 @@ document.addEventListener('DOMContentLoaded', () => {
     modalCandidateRole.textContent = data.role;
     modalCandidateTag.textContent = data.tag;
 
+    const [firstName, ...lastNameParts] = data.name.split(' ');
+    modalCandidateHeading.innerHTML = `${firstName} <span class="text-[#2ED8C3] uppercase">${lastNameParts.join(' ')}</span>`;
+
     // 1. Render Academic Information
     modalAcademicInfo.innerHTML = `
       <div class="bg-[#0B0F0F] border border-[#149E92]/35 rounded-xl p-3">
@@ -340,7 +343,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // MASANGKAY PLATFORMS
     {
       category: 'masangkay',
-      categoryLabel: 'MASANGKAY • Legislative Bill 01',
+      categoryLabel: 'MASANGKAY • Agenda 01',
       badgeColor: 'bg-[#149E92]/25 text-[#7AC0BA] border border-[#7AC0BA]/30',
       title: 'Ready, Set, Code',
       goal: 'Mandatory release of preparatory learning modules to bridge the knowledge gap between beginners and experienced students.',
@@ -348,7 +351,7 @@ document.addEventListener('DOMContentLoaded', () => {
     },
     {
       category: 'masangkay',
-      categoryLabel: 'MASANGKAY • Legislative Bill 02',
+      categoryLabel: 'MASANGKAY • Agenda 02',
       badgeColor: 'bg-[#7AC0BA]/20 text-[#7AC0BA] border border-[#7AC0BA]/35',
       title: 'Eye Care for You',
       goal: 'Free eye examinations for college scholars to check prescriptions, with a policy framework for future service expansion.',
@@ -356,7 +359,7 @@ document.addEventListener('DOMContentLoaded', () => {
     },
     {
       category: 'masangkay',
-      categoryLabel: 'MASANGKAY • Legislative Bill 03',
+      categoryLabel: 'MASANGKAY • Agenda 03',
       badgeColor: 'bg-[#149E92]/25 text-[#7AC0BA] border border-[#7AC0BA]/30',
       title: 'CCS BOOST!',
       goal: 'Application-based tool subscription slots allowing selected students to choose from an approved list of interactive platforms.',
@@ -364,7 +367,7 @@ document.addEventListener('DOMContentLoaded', () => {
     },
     {
       category: 'masangkay',
-      categoryLabel: 'MASANGKAY • Legislative Bill 04',
+      categoryLabel: 'MASANGKAY • Agenda 04',
       badgeColor: 'bg-[#7AC0BA]/20 text-[#7AC0BA] border border-[#7AC0BA]/35',
       title: 'Shadow Tech',
       goal: 'Pair frosh with CCS alumni mentors based on shared schedules and specialties in preparation for formal internships.',
@@ -372,7 +375,7 @@ document.addEventListener('DOMContentLoaded', () => {
     },
     {
       category: 'masangkay',
-      categoryLabel: 'MASANGKAY • Legislative Bill 05',
+      categoryLabel: 'MASANGKAY • Agenda 05',
       badgeColor: 'bg-[#149E92]/25 text-[#7AC0BA] border border-[#7AC0BA]/30',
       title: 'Campus Assistance and Relief in Emergencies (CARE)',
       goal: 'Direct third-party payments for urgent medical bills, stolen equipment, natural disasters, and unsafe living conditions.',
