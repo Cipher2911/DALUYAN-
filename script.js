@@ -168,10 +168,13 @@ document.addEventListener('DOMContentLoaded', () => {
   const modalDoneBtn = document.getElementById('modal-done-btn');
   const modalPlatformsLink = document.getElementById('modal-platforms-link');
 
+  let currentModalCandidate = 'gueco';
+
   function openCandidateModal(candidateKey) {
     const data = candidateProfiles[candidateKey];
     if (!data || !modal) return;
 
+    currentModalCandidate = candidateKey;
     const modalCandidateTagline = document.getElementById('modal-candidate-tagline');
 
     modalCandidateImg.src = data.image;
@@ -262,7 +265,6 @@ document.addEventListener('DOMContentLoaded', () => {
   if (closeModalBtn) closeModalBtn.addEventListener('click', closeCandidateModal);
   if (modalDoneBtn) modalDoneBtn.addEventListener('click', closeCandidateModal);
   if (modalBackdrop) modalBackdrop.addEventListener('click', closeCandidateModal);
-  if (modalPlatformsLink) modalPlatformsLink.addEventListener('click', closeCandidateModal);
 
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && modal && !modal.classList.contains('hidden')) {
@@ -498,23 +500,34 @@ document.addEventListener('DOMContentLoaded', () => {
     'hover:border-[#7AC0BA]/60'
   ];
 
-  platformTabs.forEach(tab => {
-    tab.addEventListener('click', () => {
-      const category = tab.getAttribute('data-category');
-
-      platformTabs.forEach(t => {
-        t.setAttribute('aria-selected', 'false');
+  function selectPlatformTab(category) {
+    platformTabs.forEach(t => {
+      const isMatch = t.getAttribute('data-category') === category;
+      t.setAttribute('aria-selected', String(isMatch));
+      if (isMatch) {
+        t.classList.remove(...inactiveTabClasses);
+        t.classList.add(...activeTabClasses);
+      } else {
         t.classList.remove(...activeTabClasses);
         t.classList.add(...inactiveTabClasses);
-      });
+      }
+    });
 
-      tab.setAttribute('aria-selected', 'true');
-      tab.classList.remove(...inactiveTabClasses);
-      tab.classList.add(...activeTabClasses);
+    renderPlatformCards(category);
+  }
 
-      renderPlatformCards(category);
+  platformTabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      selectPlatformTab(tab.getAttribute('data-category'));
     });
   });
+
+  if (modalPlatformsLink) {
+    modalPlatformsLink.addEventListener('click', () => {
+      selectPlatformTab(currentModalCandidate);
+      closeCandidateModal();
+    });
+  }
 
   // Initial render defaults to GUECO
   renderPlatformCards('gueco');
